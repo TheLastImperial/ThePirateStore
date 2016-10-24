@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('main');
+	return view('main');
+});
+Route::get('/categorias', function () {
+	return view('categorias');
 });

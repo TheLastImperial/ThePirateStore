@@ -50,6 +50,8 @@
 								<li class="[ dropdown-header ]">Builders</li>
 								<li><a href="#" class="[ animate ]">Form Builder <span class="[ pull-right glyphicon glyphicon-tasks ]"></span></a></li>
 								<li><a href="#" class="[ animate ]">Button Builder <span class="[ pull-right glyphicon glyphicon-edit ]"></span></a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href='<?= url("/categorias") ?>' class="[ animate ]">Ver todo <span class="[ pull-right glyphicon glyphicon-edit ]"></span></a></li>
 							</ul>
 						</li>
 						<li><a class="animate" href="#register">REGISTRO</a></li>
@@ -75,6 +77,7 @@
 		<script src='<?= asset("js/jquery.min.js") ?>'></script>
 		<script src='<?= asset("js/bootstrap.min.js") ?>'></script>
 		<script src='<?= asset("js/angular.min.js") ?>'></script>
+		<script src='<?= asset("js/navbar.js") ?>'></script>
 		<script src='<?= asset("js/app.js") ?>'></script>
 		@yield('scripts')
 	</body>

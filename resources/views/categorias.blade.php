@@ -6,41 +6,55 @@
 
 @section('content')
 <div class="container">
-
 		<div class="row">
-
-			<div class="col-md-12">
-
-				<div class="row carousel-holder">
-
-					<div class="col-md-12">
-						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-							<ol class="carousel-indicators">
-								<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-								<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-							</ol>
-							<div class="carousel-inner">
-								<div class="item active">
-									<img class="slide-image" src="http://placehold.it/1140x300" alt="">
-								</div>
-								<div class="item">
-									<img class="slide-image" src="http://placehold.it/1140x300" alt="">
-								</div>
-								<div class="item">
-									<img class="slide-image" src="http://placehold.it/1140x300" alt="">
-								</div>
+			<div class="col-md-3">
+				<div id="search_block" class="panel-body">
+					<form role="form" class="form-horizontal" method="post" action="">
+						<div class="form-group">
+							<label class="col-xs-10 col-sm-2 col-md-4 control-label" for="filtro_nombre">Nombre:</label>
+							<div class="col-xs-10 col-sm-8 col-md-8" id="filtro_nombre">
+								<select class="form-control" name="section_id">
+									<option value="all" selected>No importa</option>
+									<option value="des">A-Z</option>
+									<option value="asc">Z-A</option>
+								</select>
 							</div>
-							<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-								<span class="glyphicon glyphicon-chevron-left"></span>
-							</a>
-							<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-								<span class="glyphicon glyphicon-chevron-right"></span>
-							</a>
 						</div>
-					</div>
-
+						<div class="form-group">
+							<label class="col-xs-10 col-sm-2 col-md-4 control-label" for="filtro_precio">Precio:</label>
+							<div class="col-xs-10 col-sm-8 col-md-8" id="filtro_precio">
+								<select class="form-control" name="section_id">
+									<option value="all" selected>No importa</option>
+									<option value="des">Más barato primero</option>
+									<option value="asc">Más caro primero</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-10 col-sm-2 col-md-4 control-label" for="filtro_calificacion">Calificación:</label>
+							<div class="col-xs-10 col-sm-8 col-md-8" id="filtro_calificacion">
+								<select class="form-control" name="section_id">
+									<option value="all" selected>No importa</option>
+									<option value="des">Mejor valorado primero</option>
+									<option value="asc">Menos valorado primero</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-10 col-sm-2 col-md-4 control-label" for="filtro_agregado">Agregado:</label>
+							<div class="col-xs-10 col-sm-8 col-md-8" id="filtro_agregado">
+								<select class="form-control" name="section_id">
+									<option value="all" selected>No importa</option>
+									<option value="des">Más nuevo primero</option>
+									<option value="asc">Más viejo primero</option>
+								</select>
+							</div>
+						</div>
+						<button class="btn btn-primary pull-right" value="filtrar" name="filtrar" type="submit">Filtrar</button>
+					</form>
 				</div>
+			</div>
+			<div class="col-md-9">
 
 				<div class="row">
 
