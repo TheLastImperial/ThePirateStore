@@ -12,8 +12,8 @@ class CreatePasswordResetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->index();
+        Schema::create('reiniciar_contrasenas', function (Blueprint $table) {
+            $table->string('correo')->index();
             $table->string('token')->index();
             $table->timestamp('created_at');
         });
@@ -26,6 +26,6 @@ class CreatePasswordResetsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('password_resets');
+        Schema::drop('reiniciar_contrasenas');
     }
 }
