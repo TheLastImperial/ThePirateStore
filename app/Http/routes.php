@@ -17,3 +17,8 @@ Route::get('/', function () {
 Route::get('/categorias', function () {
 	return view('categorias');
 });
+Route::get('/registro', function () {
+	return view('registro');
+});
+Route::post('/login','UsuarioController@login');
+Route::post('/registro/registrar','UsuarioController@register');

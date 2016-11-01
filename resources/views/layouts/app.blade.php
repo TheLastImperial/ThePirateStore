@@ -6,11 +6,12 @@
 		<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href='<?= asset("css/bootstrap.min.css") ?>'>
 		<link rel="stylesheet" href='<?= asset("css/navbar.css") ?>'>
+		<link rel="stylesheet" href='<?= asset("css/login.css") ?>'>
 		@yield('styles')
 	</head>
 	<body>
 		<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-	    	<div class="[ container ]">
+				<div class="[ container ]">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="[ navbar-header ]">
 					<button type="button" class="[ navbar-toggle ]" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -54,8 +55,8 @@
 								<li><a href='<?= url("/categorias") ?>' class="[ animate ]">Ver todo <span class="[ pull-right glyphicon glyphicon-edit ]"></span></a></li>
 							</ul>
 						</li>
-						<li><a class="animate" href="#register">REGISTRO</a></li>
-						<li><a class="animate" href="#login">LOGIN</a></li>
+						<li><a class="animate" href="<?= url('registro') ?>">REGISTRO</a></li>
+						<li><a class="animate" href="#" data-toggle="modal" data-target="#login">LOGIN</a></li>
 						
 					</ul>
 				</div>
@@ -73,6 +74,26 @@
 				</div>
 			</div>
 		</nav>
+		<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<div class="container">
+				<div class="row" id="pwd-container">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<section class="login-form">
+							<form method="post" action="<?= url('login') ?>" role="login">
+								<input type="hidden" name="_token" value="{{csrf_token() }}">
+								<img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
+								<input type="email" name="email" placeholder="Email" required class="form-control input-lg" value="tucorreo@ejemplo.com" />
+								<input type="password" class="form-control input-lg" id="password" placeholder="Contraseña" required="" />
+								<button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Iniciar sesión</button>
+								<div><a href="<?= url('registro') ?>">Crear cuenta</a> o <a href="#">recuperar contraseña</a></div>			
+							</form>
+						</section>	
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+			</div>
+		</div>
 		@yield('content')
 		<script src='<?= asset("js/jquery.min.js") ?>'></script>
 		<script src='<?= asset("js/bootstrap.min.js") ?>'></script>
