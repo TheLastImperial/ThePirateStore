@@ -8,8 +8,19 @@ use \Serverfireteam\Panel\CrudController;
 
 use Illuminate\Http\Request;
 
-class CategoriaController extends CrudController{
+use App\Categoria;
 
+class CategoriaController extends CrudController{
+	public function index() {
+		$categorias = Categoria::all();
+
+		return view('main', compact('categorias'));
+	}
+	public function index2() {
+		$categorias = Categoria::all();
+
+		return view('categorias', compact('categorias'));
+	}
     public function all($entity){
         parent::all($entity); 
 

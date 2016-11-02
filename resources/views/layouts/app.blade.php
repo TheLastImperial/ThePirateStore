@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="store">
+<html>
 	<head>
 		<meta charset="UTF-8">
 		<title>The Pirate Store</title>
@@ -43,21 +43,17 @@
 						<li>
 							<a href="#" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">CATEGORÍAS <span class="[ caret ]"></span></a>
 							<ul class="[ dropdown-menu ]" role="menu">
-								<li><a href="#" class="[ animate ]">Blog <span class="[ pull-right glyphicon glyphicon-pencil ]"></span></a></li>
-								<li><a href="#" class="[ animate ]">List of resources <span class="[ pull-right glyphicon glyphicon-align-justify ]"></span></a></li>
-								<li><a href="#" class="[ animate ]">Download Bootstrap <span class="[ pull-right glyphicon glyphicon-cloud-download ]"></span></a></li>
-								<li class="[ dropdown-header ]">Bootstrap Templates</li>
-								<li><a href="#" class="[ animate ]">Browse Templates <span class="[ pull-right glyphicon glyphicon-shopping-cart ]"></span></a></li>
-								<li class="[ dropdown-header ]">Builders</li>
-								<li><a href="#" class="[ animate ]">Form Builder <span class="[ pull-right glyphicon glyphicon-tasks ]"></span></a></li>
-								<li><a href="#" class="[ animate ]">Button Builder <span class="[ pull-right glyphicon glyphicon-edit ]"></span></a></li>
+								@yield('categorias')
 								<li role="separator" class="divider"></li>
-								<li><a href='<?= url("/categorias") ?>' class="[ animate ]">Ver todo <span class="[ pull-right glyphicon glyphicon-edit ]"></span></a></li>
+								<li><a href='<?= url("/categorias") ?>' class="[ animate ]">Ver todo <span class="[ pull-right glyphicon glyphicon-align-justify ]"></span></a></li>
 							</ul>
 						</li>
+						@if(!Auth::check())
 						<li><a class="animate" href="<?= url('registro') ?>">REGISTRO</a></li>
 						<li><a class="animate" href="#" data-toggle="modal" data-target="#login">LOGIN</a></li>
-						
+						@else
+						<li><a class="animate" href="<?= url('salir') ?>">CERRAR SESIÓN</a></li>
+						@endif
 					</ul>
 				</div>
 			</div>
@@ -83,7 +79,7 @@
 							<form method="post" action="<?= url('login') ?>" role="login">
 								<input type="hidden" name="_token" value="{{csrf_token() }}">
 								<img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
-								<input type="email" name="email" placeholder="Email" required class="form-control input-lg" value="tucorreo@ejemplo.com" />
+								<input type="email" name="email" placeholder="tucorreo@ejemplo.com" required class="form-control input-lg" />
 								<input type="password" class="form-control input-lg" id="password" placeholder="Contraseña" required="" />
 								<button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Iniciar sesión</button>
 								<div><a href="<?= url('registro') ?>">Crear cuenta</a> o <a href="#">recuperar contraseña</a></div>			
@@ -97,9 +93,9 @@
 		@yield('content')
 		<script src='<?= asset("js/jquery.min.js") ?>'></script>
 		<script src='<?= asset("js/bootstrap.min.js") ?>'></script>
-		<script src='<?= asset("js/angular.min.js") ?>'></script>
+		<!--<script src='<?= asset("js/angular.min.js") ?>'></script>-->
 		<script src='<?= asset("js/navbar.js") ?>'></script>
-		<script src='<?= asset("js/app.js") ?>'></script>
+		<!--<script src='<?= asset("js/app.js") ?>'></script>-->
 		@yield('scripts')
 	</body>
 </html>

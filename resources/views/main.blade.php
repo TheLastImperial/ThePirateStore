@@ -4,6 +4,12 @@
 <link rel="stylesheet" href='<?= asset("css/store.css") ?>'>
 @stop
 
+@section('categorias')
+	@foreach($categorias as $c)
+	<li><a href="categorias/{{$c->nombre}}" class="[ animate ]">{{$c->nombre}}</a></li>
+	@endforeach
+@stop
+
 @section('content')
 <div class="container">
 

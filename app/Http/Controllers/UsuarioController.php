@@ -29,17 +29,20 @@ class UsuarioController extends CrudController{
     	return redirect() -> intended('/');
     }
     public function login(Request $request) {
-    	Auth::logout();
     	$correo		= $request->input('email');
     	$contrasena = $request->input('password');
     	$usuario 	= Usuario::where('correo', '=', $correo)->first();
 		if(isset($usuario)) {
 		    if(Hash::check($contrasena,$usuario->contrasena)) {
 		        Auth::login($usuario);
-		        return redirect() -> intended('/');
+                return redirect() -> intended('/');
 		    }
 		}
-    	return redirect() -> intended('categorias');
+    	return redirect() -> intended('/');
+    }
+    public function logout() {
+        Auth::logout();
+        return redirect() -> intended('/');
     }
     public function all($entity){
         parent::all($entity); 

@@ -11,14 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-	return view('main');
-});
-Route::get('/categorias', function () {
-	return view('categorias');
-});
+Route::get('/','CategoriaController@index');
+Route::get('/categorias','CategoriaController@index2');
 Route::get('/registro', function () {
 	return view('registro');
 });
 Route::post('/login','UsuarioController@login');
 Route::post('/registro/registrar','UsuarioController@register');
+Route::get('/salir','UsuarioController@logout');
