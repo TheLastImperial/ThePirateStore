@@ -8,19 +8,42 @@ use \Serverfireteam\Panel\CrudController;
 
 use Illuminate\Http\Request;
 
-use App\Categoria;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
-class CategoriaController extends CrudController{
-	public function index() {
-		$categorias = Categoria::all();
+use App\Usuario;
 
-		return view('main', compact('categorias'));
-	}
-	public function index2() {
-		$categorias = Categoria::all();
+class UsuarioController extends CrudController{
 
-		return view('categorias', compact('categorias'));
-	}
+	public function register(Request $request){
+    	$nombre		= $request->input('nombre');
+    	$correo		= $request->input('email');
+    	$contrasena = $request->input('password');
+    	//Guardar en BD
+    	$nuevo = new Usuario;
+    	$nuevo -> nombre 	 = $nombre;
+    	$nuevo -> correo 	 = $correo;
+    	$nuevo -> contrasena = bcrypt($contrasena);
+    	$nuevo -> save();
+
+    	return redirect() -> intended('/');
+    }
+    public function login(Request $request) {
+    	$correo		= $request->input('email');
+    	$contrasena = $request->input('password');
+    	$usuario 	= Usuario::where('correo', '=', $correo)->first();
+		if(isset($usuario)) {
+		    if(Hash::check($contrasena,$usuario->contrasena)) {
+		        Auth::login($usuario);
+                return redirect() -> intended('/');
+		    }
+		}
+    	return redirect() -> intended('/');
+    }
+    public function logout() {
+        Auth::logout();
+        return redirect() -> intended('/');
+    }
     public function all($entity){
         parent::all($entity); 
 
