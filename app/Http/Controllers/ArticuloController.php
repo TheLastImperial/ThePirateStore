@@ -17,19 +17,19 @@ class ArticuloController extends CrudController{
 
 
 			$this->filter = \DataFilter::source(new \App\Articulo);
-			$this->filter->add('name', 'Name', 'text');
+			$this->filter->add('nombre', 'Nombre', 'text');
 			$this->filter->submit('search');
 			$this->filter->reset('reset');
 			$this->filter->build();
 
-			$this->grid = \DataGrid::source($this->filter);
+			$this->grid = \DataGrid::source(\App\Articulo::with('categoria'));
       $this->grid->add('id', 'ID');
       $this->grid->add('nombre', 'Nombre');
       $this->grid->add('descripcion', 'Descripcion');
       $this->grid->add('precio', 'Precio');
       $this->grid->add('cantidad', 'Cantidad');
       $this->grid->add('activo', 'Activo');
-      $this->grid->add('categoria_id', 'Categoria');
+      $this->grid->add('categoria.nombre', 'Categoria');
 
 			$this->addStylesToGrid();
 

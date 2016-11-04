@@ -358,11 +358,12 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
     );
 
     public static $classMap = array (
+        'AddArticuloCarritoTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_30_192548_add_articulo_carrito_table.php',
         'AddArticulosTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_30_185618_add_articulos_table.php',
         'AddCarritoTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_30_192430_add_carrito_table.php',
         'AddCategoriasTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_30_185526_add_categorias_table.php',
         'AddComentarioTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_30_191913_add_comentario_table.php',
-        'AddUsuarioCarritoTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_30_192548_add_usuario_carrito_table.php',
+        'AddImageTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_04_155104_add_image_table.php',
         'AddVentaTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_30_192910_add_venta_table.php',
         'CreateAdminsTable' => __DIR__ . '/..' . '/serverfireteam/panel/src/database/migrations/2014_11_16_205658_create_admins_table.php',
         'CreatePasswordRemindersTable' => __DIR__ . '/..' . '/serverfireteam/panel/src/database/migrations/2014_12_02_152920_create_password_reminders_table.php',

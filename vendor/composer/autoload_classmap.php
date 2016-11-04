@@ -6,11 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddArticuloCarritoTable' => $baseDir . '/database/migrations/2016_10_30_192548_add_articulo_carrito_table.php',
     'AddArticulosTable' => $baseDir . '/database/migrations/2016_10_30_185618_add_articulos_table.php',
     'AddCarritoTable' => $baseDir . '/database/migrations/2016_10_30_192430_add_carrito_table.php',
     'AddCategoriasTable' => $baseDir . '/database/migrations/2016_10_30_185526_add_categorias_table.php',
     'AddComentarioTable' => $baseDir . '/database/migrations/2016_10_30_191913_add_comentario_table.php',
-    'AddUsuarioCarritoTable' => $baseDir . '/database/migrations/2016_10_30_192548_add_usuario_carrito_table.php',
+    'AddImageTable' => $baseDir . '/database/migrations/2016_11_04_155104_add_image_table.php',
     'AddVentaTable' => $baseDir . '/database/migrations/2016_10_30_192910_add_venta_table.php',
     'CreateAdminsTable' => $vendorDir . '/serverfireteam/panel/src/database/migrations/2014_11_16_205658_create_admins_table.php',
     'CreatePasswordRemindersTable' => $vendorDir . '/serverfireteam/panel/src/database/migrations/2014_12_02_152920_create_password_reminders_table.php',

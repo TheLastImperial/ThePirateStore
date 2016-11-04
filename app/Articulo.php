@@ -12,8 +12,7 @@ class Articulo extends Model {
     public function categoria(){
       return $this->belongsTo('App\Categoria');
     }
-
     public function imagen(){
-      return $this->hasMany();
+      return $this->hasMany('App\Imagen');
     }
 }
