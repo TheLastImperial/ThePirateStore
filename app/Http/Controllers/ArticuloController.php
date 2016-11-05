@@ -50,8 +50,6 @@ class ArticuloController extends CrudController{
 
 			$this->edit->add('nombre', 'Nombre', 'text');
 
-      $this->edit->add('imagen','Imagen', 'image')
-        ->move('upload/image')->preview(80,80);
 
 			$this->edit->add('descripcion', 'Descripcion', 'textarea');
 
@@ -65,7 +63,6 @@ class ArticuloController extends CrudController{
 
       $this->edit->add('categoria_id','Categoria', 'select')
         ->options(\App\Categoria::pluck("nombre","id")->all()  );
-
 
         return $this->returnEditView();
     }

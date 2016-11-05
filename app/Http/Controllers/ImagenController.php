@@ -38,19 +38,16 @@ class ImagenController extends CrudController{
 
         // Simple code of  edit part , List of all fields here : http://laravelpanel.com/docs/master/crud-fields
 
-			$this->edit = \DataEdit::source(new \App\Articulo());
+			$this->edit = \DataEdit::source(new \App\Imagen());
 
 			$this->edit->label('Edit Category');
 
       $this->edit->add('imagen', 'Imagen', 'image')
-        ->move('images/articulos/')
+        ->move('imagenes/articulos/')
         ->preview(200,200);
 
 			$this->edit->add('articulo_id','Articulo','select')
         ->options(\App\Articulo::pluck("nombre", "id")->all());
-
-
-
 
         return $this->returnEditView();
     }
