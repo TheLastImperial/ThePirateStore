@@ -21,7 +21,7 @@
 						<span class="[ icon-bar ]"></span>
 					</button>
 					<div class="[ animbrand ]">
-						<a class="[ navbar-brand ][ animate ]" href="#">THE PIRATE STORE</a>
+						<a class="[ navbar-brand ][ animate ]" href="#"><img src='<?= asset("img/logo.png") ?>' alt="The Pirate Store" class="responsive"></a>
 					</div>
 				</div>
 
@@ -78,7 +78,7 @@
 						<section class="login-form">
 							<form method="post" action="<?= url('login') ?>" role="login">
 								<input type="hidden" name="_token" value="{{csrf_token() }}">
-								<img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
+								<img src='<?= asset("img/logo.png") ?>' alt="The Pirate Store" class="img-responsive">
 								<input type="email" name="email" placeholder="tucorreo@ejemplo.com" required class="form-control input-lg" />
 								<input type="password" class="form-control input-lg" id="password" placeholder="Contraseña" required="" />
 								<button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Iniciar sesión</button>

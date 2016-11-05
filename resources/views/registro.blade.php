@@ -6,6 +6,12 @@
 		<link rel="stylesheet" href='<?= asset("css/bootstrap.min.css") ?>'>
 		<link rel="stylesheet" href='<?= asset("css/login.css") ?>'>
 		<style>
+		* {
+    -webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	outline: none;
+}
 			body {
 				background: -webkit-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Chrome 10+, Saf5.1+ */
 				background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
@@ -23,10 +29,10 @@
 					<section class="login-form">
 						<form method="post" action="<?= url('registro/registrar') ?>" role="registrar">
 							<input type="hidden" name="_token" value="{{csrf_token() }}">
-							<img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
+							<img src='<?= asset("img/logo.png") ?>' alt="The Pirate Store" class="img-responsive">
 							<input type="text" id="nombre" name="nombre" placeholder="Nombre de usuario" required class="form-control input-lg" />
 							<input type="email" name="email" placeholder="tucorreo@ejemplo.com" required class="form-control input-lg" />
-							<input type="email" name="email_verificacion" placeholder="tucorreo@ejemplo.com" required class="form-control input-lg" />
+							<input type="email" name="email_verificacion" placeholder="tucorreo@ejemplo.com" required autocomplete="off" class="form-control input-lg" />
 							<input type="password" class="form-control input-lg" id="password" placeholder="Contraseña" required />
 							<div class="pwstrength_viewport_progress"></div>
 							<button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Crear cuenta</button>
