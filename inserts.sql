@@ -117,3 +117,12 @@ insert into articulos(nombre, descripcion, precio, cantidad, activo, categoria_i
         "12-12-12",
         "12-12-12"
       );
+
+insert into links(display, url, show_menu)
+  values('Categorias', 'Categoria', 1);
+
+insert into links(display, url, show_menu)
+  values('Articulos', 'Articulo', 1);
+
+insert into links(display, url, show_menu)
+  values('Imagenes', 'Imagen', 1);
