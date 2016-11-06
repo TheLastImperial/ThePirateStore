@@ -14,9 +14,12 @@
 Route::get('/','CategoriaController@index');
 Route::get('/categorias/{categoria}','ArticuloController@articulosCategoria');
 Route::get('/articulo/{id}','ArticuloController@articulo');
+/* Carrito */
+Route::post('/articulo/{id}/comprar','ArticuloCarritoController@comprar');
+/* Usuarios */
+Route::post('/login','UsuarioController@login');
 Route::get('/registro', function () {
 	return view('registro');
 });
-Route::post('/login','UsuarioController@login');
 Route::post('/registro/registrar','UsuarioController@register');
 Route::get('/salir','UsuarioController@logout');

@@ -8,8 +8,12 @@ use \Serverfireteam\Panel\CrudController;
 
 use Illuminate\Http\Request;
 
-class CarritoController extends CrudController{
+use App\Categoria;
+use App\Articulo;
+use App\Carrito;
 
+class CarritoController extends CrudController{
+	
     public function all($entity){
         parent::all($entity); 
 

@@ -6,7 +6,7 @@
 
 @section('categorias')
 	@foreach($categorias as $c)
-	<li><a href="{{$c->nombre}}" class="[ animate ]">{{$c->nombre}}</a></li>
+	<li><a href="../categorias/{{$c->nombre}}" class="[ animate ]">{{$c->nombre}}</a></li>
 	@endforeach
 @stop
 
@@ -43,7 +43,7 @@
 			<p>Descripción: {{$a->descripcion}}</p>
 		</div>
 		<div class="col-md-3">
-			<form role="form" class="form-horizontal" method="post" action="">
+			<form role="form" class="form-horizontal" method="post" action='{{url("articulo/".$a->id."/comprar")}}'>
 				<input type="hidden" name="_token" value="{{csrf_token() }}">
 				<div class="form-group">
 					<label class="col-xs-10 col-sm-2 col-md-4 control-label" for="cantidad">Cantidad:</label>
@@ -55,7 +55,11 @@
 						</select>
 					</div>
 				</div>
+				@if(Auth::check())
 				<button class="btn btn-primary pull-right" value="comprar" name="comprar" type="submit">Comprar</button>
+				@else
+				<button class="btn btn-primary pull-right" value="comprar" name="comprar" type="submit" disabled>Comprar</button>
+				@endif
 			</form>
 		</div>
 		@endforeach
