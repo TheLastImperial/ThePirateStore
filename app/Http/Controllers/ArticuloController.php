@@ -8,8 +8,28 @@ use \Serverfireteam\Panel\CrudController;
 
 use Illuminate\Http\Request;
 
-class ArticuloController extends CrudController{
+use App\Categoria;
+use App\Articulo;
 
+class ArticuloController extends CrudController {
+    public function articulosCategoria($categoria) {
+        $categorias  = Categoria::orderBy('nombre','asc')
+                                ->get();
+        $idCategoria = Categoria::select('id')
+                                ->where('nombre','=',$categoria)
+                                ->get();
+        $articulos   = Articulo::where('categoria_id','=',$idCategoria[0]->id)
+                                ->get();
+
+        return view('categorias', compact('categorias','articulos'));
+    }
+    public function articulo($id) {
+        $categorias  = Categoria::orderBy('nombre','asc')
+                                ->get();
+        $articulo = Articulo::where('id','=',$id)->get();
+
+        return view('articulo', compact('categorias','articulo'));
+    }
     public function all($entity){
         parent::all($entity);
 

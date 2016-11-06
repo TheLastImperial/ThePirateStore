@@ -12,7 +12,8 @@
 */
 
 Route::get('/','CategoriaController@index');
-Route::get('/categorias','CategoriaController@index2');
+Route::get('/categorias/{categoria}','ArticuloController@articulosCategoria');
+Route::get('/articulo/{id}','ArticuloController@articulo');
 Route::get('/registro', function () {
 	return view('registro');
 });

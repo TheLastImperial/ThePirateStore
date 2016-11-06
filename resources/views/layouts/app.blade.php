@@ -44,8 +44,6 @@
 							<a href="#" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">CATEGORÍAS <span class="[ caret ]"></span></a>
 							<ul class="[ dropdown-menu ]" role="menu">
 								@yield('categorias')
-								<li role="separator" class="divider"></li>
-								<li><a href='<?= url("/categorias") ?>' class="[ animate ]">Ver todo <span class="[ pull-right glyphicon glyphicon-align-justify ]"></span></a></li>
 							</ul>
 						</li>
 						@if(!Auth::check())
