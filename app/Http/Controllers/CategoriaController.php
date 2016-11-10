@@ -13,8 +13,8 @@ use App\Categoria;
 class CategoriaController extends CrudController{
 	public function index() {
 		$categorias = Categoria::orderBy('nombre','asc')->get();
-
-		return view('main', compact('categorias'));
+		$articulos  = \App\Articulo::all();
+		return view('main', compact('categorias', 'articulos'));
 	}
     public function all($entity){
         parent::all($entity);

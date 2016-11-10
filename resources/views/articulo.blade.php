@@ -67,19 +67,19 @@
 	<hr>
 	<div class="row">
 		<!-- Esto sólo debe de ser visible si estás conectado y si has comprado el artículo
-			 Para que aparezca cuando estás conectado, usar Auth::check() 
+			 Para que aparezca cuando estás conectado, usar Auth::check()
 		-->
+		@if(Auth::check())
 		<div class="col-md-5">
 			<form role="form" class="form-horizontal" method="post" action="">
 				<input type="hidden" name="_token" value="{{csrf_token() }}">
-				<div class="form-group">
-					<input type="text" name="titulo" placeholder="Título" class="form-control input-lg" required />
-					<br>
+				<div class="form-group">					
 					<textarea name="comentario"  placeholder="Comentario" class="form-control input-lg" required></textarea>
 				</div>
 				<button class="btn btn-primary pull-right" value="comentar" name="comentar" type="submit">Comentar</button>
 			</form>
-		</div>	
+		</div>
+		@endif
 	</div>
 	<hr>
 	<div class="row">
