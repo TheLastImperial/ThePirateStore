@@ -14,7 +14,12 @@ class VentaController extends CrudController{
 
       $carrito = \App\Carrito::find($request->input('carrito_id'));
       foreach($carrito->articuloCarrito as $ac){
+
         $articulo             = \App\Articulo::find($ac->articulo_id);
+        if($articulo->cantidad < $ac->cantidad){
+          echo "El articulo: ".$articulo->nombre."sera omitido ya que no hay sufientes en el inventario.";
+          continue;
+        }
         $articulo->cantidad   -= $ac->cantidad;
         $articulo->save();
       }

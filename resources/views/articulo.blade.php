@@ -47,7 +47,9 @@
 				<input type="hidden" name="_token" value="{{csrf_token() }}">
 				<input type="hidden" name="articulo_id" value="{{$a->id}}">
 				<div class="form-group">
+					@if($a->cantidad >0)
 					<label class="col-xs-10 col-sm-2 col-md-4 control-label" for="cantidad">Cantidad:</label>
+
 					<div class="col-xs-10 col-sm-8 col-md-8" id="filtro">
 						<select class="form-control" name="cantidad">
 							@for($i = 1; $i <= $a->cantidad; $i++)
@@ -55,8 +57,10 @@
 							@endfor
 						</select>
 					</div>
+
 				</div>
-				@if(Auth::check())
+				@endif
+				@if(Auth::check() && $a->cantidad > 0)
 				<button class="btn btn-primary pull-right" value="comprar" name="comprar" type="submit">Comprar</button>
 				@else
 				<button class="btn btn-primary pull-right" value="comprar" name="comprar" type="submit" disabled>Comprar</button>
