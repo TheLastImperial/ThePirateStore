@@ -16,20 +16,43 @@ use App\Carrito;
 use App\Usuario;
 
 class ArticuloCarritoController extends CrudController{
-	public function comprar(Request $request) {
+	public function agregar(Request $request) {
 		$usuario = Usuario::find(Auth::id());
 		// Crear carrito solo si no se tiene ya un carrito no asociado a la venta
 		// $carrito = new Carrito();
 
-		dd($usuario->id);
+		$carrito 		= DB::table('carritos')
+										->whereNotIn('id', $this->carritoSinVentaId($usuario->id))
+										->where('carritos.usuario_id','=',$usuario->id)
+										->get();
+		// Si es mayor a cero entonces ya hay un carrito no asociado
+		// a una venta para agregarsele el articulo_carritos.
+
+		if(sizeof($carrito) == 0){
+			$carrito 							= new \App\Carrito();
+			$carrito->usuario_id 	= $usuario->id;
+			$carrito->save();
+		}
+		$carrito 					= $carrito[0];
+		$ac 							= new \App\ArticuloCarrito();
+		$ac->carrito_id 	= $carrito->id;
+		$ac->articulo_id	= $request->input('articulo_id');
+		$ac->cantidad 		= $request->input('cantidad');
+		$ac->save();
+
+		return redirect() -> intended('/carrito');
 
 	}
-	public function carritosId($id){
-		$carritosId = DB::table('carritos')
-										->select('id')
-										->where('usuario_id',$id);
+
+	public function carritoSinVentaId($id){
+		$carritosId = DB::table('carritos as c')
+									->join('ventas as v','v.carrito_id','c.id')
+									->select('c.id')
+									->where('c.usuario_id',$id)
+									->get();
 		return $carritosId;
 	}
+
 	public function all($entity){
 		parent::all($entity);
 

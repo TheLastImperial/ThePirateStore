@@ -23,9 +23,13 @@ class CarritoController extends CrudController{
 			// Devuelve el carrito que no esta asociado a una venta.
 			$carrito 		= DB::table('carritos')
 											->whereNotIn('id', $this->carritoSinVentaId($usuario->id))
+											->where('carritos.usuario_id','=',$usuario->id)
 											->get();
 
-			// Si no hay carritos sin asociar debe enviar un mensaje
+			if(sizeof($carrito)==0){
+				// AKI DEBE REDIRIGIR HACI UN MENSAJE DE ERROR
+				return redirect() -> intended('/');
+			}
 			$carrito 		= Carrito::find($carrito[0]->id);
 			return view('carrito', compact('carrito','categorias') );
 		}

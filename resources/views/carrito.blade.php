@@ -49,6 +49,8 @@ table { border-collapse:collapse;border-spacing:0; }
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
+			<form role="form" class="form-horizontal" method="post" action='{{url("/venta")}}'>
+			<input type="hidden" name="_token" value="{{csrf_token() }}">
 			<table class="tg">
 				<thead>
 					<tr>
@@ -80,9 +82,12 @@ table { border-collapse:collapse;border-spacing:0; }
 					</tr>
 				</tbody>
 			</table>
+			<input type="hidden" name="carrito_id" value="{{$carrito->id}}">
+			<input type="hidden" name="total" value="{{$total}}">
+			<a href="{{url("/")}}" class="btn btn-primary pull-right"> Seguir comprando</a>
+			<button class="btn btn-success pull-right" value="comprar" name="comprar" type="submit">Comprar</button>
+			</form>
 		</div>
-		<button class="btn btn-primary pull-right" value="comprar" name="comprar" type="submit">Seguir comprando</button>
-		<button class="btn btn-success pull-right" value="comprar" name="comprar" type="submit">Comprar</button>
 	</div>
 </div>
 @stop

@@ -43,7 +43,7 @@
 			<p>Descripción: {{$a->descripcion}}</p>
 		</div>
 		<div class="col-md-3">
-			<form role="form" class="form-horizontal" method="post" action='{{url("articulo/comprar")}}'>
+			<form role="form" class="form-horizontal" method="post" action='{{url("articulocarrito/agregar")}}'>
 				<input type="hidden" name="_token" value="{{csrf_token() }}">
 				<input type="hidden" name="articulo_id" value="{{$a->id}}">
 				<div class="form-group">
