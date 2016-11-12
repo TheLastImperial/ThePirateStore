@@ -23,4 +23,11 @@ class Usuario extends Authenticatable
     protected $hidden = [
         'contrasena', 'remember_token',
     ];
+
+    public function carritos(){
+      return $this->hasMany('App\Carrito');
+    }
+    public function ventas(){
+      return $this->hasManyThrough('App\Venta','App\Carrito');
+    }
 }

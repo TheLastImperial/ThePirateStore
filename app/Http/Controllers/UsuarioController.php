@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
@@ -32,20 +32,20 @@ class UsuarioController extends CrudController{
     	$correo		= $request->input('email');
     	$contrasena = $request->input('password');
     	$usuario 	= Usuario::where('correo', '=', $correo)->first();
-		if(isset($usuario)) {
-		    if(Hash::check($contrasena,$usuario->contrasena)) {
-		        Auth::login($usuario);
-                return redirect() -> intended('/');
-		    }
-		}
+			if(isset($usuario)) {
+			    if(Hash::check($contrasena,$usuario->contrasena)) {
+			        		Auth::login($usuario);
+	                return redirect() -> intended('/');
+			    }
+			}
     	return redirect() -> intended('/');
     }
     public function logout() {
-        Auth::logout();
-        return redirect() -> intended('/');
+      Auth::logout();
+      return redirect() -> intended('/');
     }
     public function all($entity){
-        parent::all($entity); 
+        parent::all($entity);
 
         /** Simple code of  filter and grid part , List of all fields here : http://laravelpanel.com/docs/master/crud-fields
 
@@ -62,27 +62,27 @@ class UsuarioController extends CrudController{
 			$this->addStylesToGrid();
 
         */
-                 
+
         return $this->returnView();
     }
-    
+
     public function  edit($entity){
-        
+
         parent::edit($entity);
 
         /* Simple code of  edit part , List of all fields here : http://laravelpanel.com/docs/master/crud-fields
-	
+
 			$this->edit = \DataEdit::source(new \App\Category());
 
 			$this->edit->label('Edit Category');
 
 			$this->edit->add('name', 'Name', 'text');
-		
+
 			$this->edit->add('code', 'Code', 'text')->rule('required');
 
 
         */
-       
+
         return $this->returnEditView();
-    }    
+    }
 }

@@ -18,7 +18,8 @@ class AddArticuloCarritoTable extends Migration
 
             $table->integer('carrito_id')->unsigned();
             $table->integer('articulo_id')->unsigned();
-
+            $table->integer('cantidad');
+            
             $table->foreign('carrito_id')->references('id')->on('carritos');
             $table->foreign('articulo_id')->references('id')->on('articulos');
 

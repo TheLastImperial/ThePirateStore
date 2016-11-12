@@ -43,12 +43,13 @@
 			<p>Descripción: {{$a->descripcion}}</p>
 		</div>
 		<div class="col-md-3">
-			<form role="form" class="form-horizontal" method="post" action='{{url("articulo/".$a->id."/comprar")}}'>
+			<form role="form" class="form-horizontal" method="post" action='{{url("articulo/comprar")}}'>
 				<input type="hidden" name="_token" value="{{csrf_token() }}">
+				<input type="hidden" name="articulo_id" value="{{$a->id}}">
 				<div class="form-group">
 					<label class="col-xs-10 col-sm-2 col-md-4 control-label" for="cantidad">Cantidad:</label>
 					<div class="col-xs-10 col-sm-8 col-md-8" id="filtro">
-						<select class="form-control" name="section_id">
+						<select class="form-control" name="cantidad">
 							@for($i = 1; $i <= $a->cantidad; $i++)
 							<option value="{{$i}}">{{$i}}</option>
 							@endfor
@@ -73,7 +74,7 @@
 		<div class="col-md-5">
 			<form role="form" class="form-horizontal" method="post" action="">
 				<input type="hidden" name="_token" value="{{csrf_token() }}">
-				<div class="form-group">					
+				<div class="form-group">
 					<textarea name="comentario"  placeholder="Comentario" class="form-control input-lg" required></textarea>
 				</div>
 				<button class="btn btn-primary pull-right" value="comentar" name="comentar" type="submit">Comentar</button>

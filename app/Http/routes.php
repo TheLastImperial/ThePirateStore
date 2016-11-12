@@ -15,7 +15,9 @@ Route::get('/','CategoriaController@index');
 Route::get('/categorias/{categoria}','ArticuloController@articulosCategoria');
 Route::get('/articulo/{id}','ArticuloController@articulo');
 /* Carrito */
-Route::post('/articulo/{id}/comprar','ArticuloCarritoController@comprar');
+Route::post('/articulo/comprar','ArticuloCarritoController@comprar');
+Route::get('/carrito','CarritoController@mostrar');
+
 /* Usuarios */
 Route::post('/login','UsuarioController@login');
 Route::get('/registro', function () {
