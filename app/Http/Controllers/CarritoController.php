@@ -21,6 +21,7 @@ class CarritoController extends CrudController{
 			$usuario 		= Usuario::find(Auth::id());
 			$categorias = Categoria::orderBy('nombre','asc')->get();
 			// Devuelve el carrito que no esta asociado a una venta.
+
 			$carrito 		= DB::table('carritos')
 											->whereNotIn('id', $this->carritoSinVentaId($usuario->id))
 											->where('carritos.usuario_id','=',$usuario->id)
@@ -30,6 +31,7 @@ class CarritoController extends CrudController{
 				// AKI DEBE REDIRIGIR HACI UN MENSAJE DE ERROR
 				return redirect() -> intended('/');
 			}
+
 			$carrito 		= Carrito::find($carrito[0]->id);
 			return view('carrito', compact('carrito','categorias') );
 		}
@@ -39,7 +41,7 @@ class CarritoController extends CrudController{
 										->join('ventas as v','v.carrito_id','c.id')
 										->select('c.id')
 										->where('c.usuario_id',$id)
-										->get();
+										->pluck('id');
 			return $carritosId;
 		}
 
