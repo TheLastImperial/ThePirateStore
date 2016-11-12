@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use \Serverfireteam\Panel\CrudController;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Categoria;
 use App\Articulo;
@@ -28,8 +29,19 @@ class ArticuloController extends CrudController {
                                 ->get();
         $articulo = Articulo::where('id','=',$id)->get();
 
-        return view('articulo', compact('categorias','articulo'));
+        // la variable comprado nos indica si
+        // el usuario ha comprado el articulo anteriormente
+        $comprado = Auth::check() && $this->anteriormenteComprado($id);
+
+        return view('articulo', compact('categorias','articulo','comprado'));
     }
+
+    public function anteriormenteComprado($id){
+      $flag   = false;
+
+      return $flag;
+    }
+
     public function all($entity){
         parent::all($entity);
 

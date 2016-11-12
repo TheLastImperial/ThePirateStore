@@ -61,9 +61,9 @@
 				</div>
 				@endif
 				@if(Auth::check() && $a->cantidad > 0)
-				<button class="btn btn-primary pull-right" value="comprar" name="comprar" type="submit">Comprar</button>
+				<button class="btn btn-primary pull-right" value="comprar" name="comprar" type="submit">Agregar al carrito</button>
 				@else
-				<button class="btn btn-primary pull-right" value="comprar" name="comprar" type="submit" disabled>Comprar</button>
+				<button class="btn btn-primary pull-right" value="comprar" name="comprar" type="submit" disabled>Agregar al carrito</button>
 				@endif
 			</form>
 		</div>
@@ -74,7 +74,7 @@
 		<!-- Esto sólo debe de ser visible si estás conectado y si has comprado el artículo
 			 Para que aparezca cuando estás conectado, usar Auth::check()
 		-->
-		@if(Auth::check())
+		@if($comprado)
 		<div class="col-md-5">
 			<form role="form" class="form-horizontal" method="post" action="">
 				<input type="hidden" name="_token" value="{{csrf_token() }}">
