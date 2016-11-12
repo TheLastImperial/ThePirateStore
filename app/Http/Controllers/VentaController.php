@@ -11,11 +11,19 @@ use Illuminate\Http\Request;
 class VentaController extends CrudController{
 
     public function comprar(Request $request){
-      
+
+      $carrito = \App\Carrito::find($request->input('carrito_id'));
+      foreach($carrito->articuloCarrito as $ac){
+        $articulo             = \App\Articulo::find($ac->articulo_id);
+        $articulo->cantidad   -= $ac->cantidad;
+        $articulo->save();
+      }
+
       $venta = new \App\Venta();
       $venta->carrito_id  = $request->input('carrito_id');
       $venta->total       = $request->input('total');
       $venta->save();
+
 
       // DEBE REDIRECCIONAR HACIA UN GACIAS POR COMPRAR
       return redirect() -> intended('/');
