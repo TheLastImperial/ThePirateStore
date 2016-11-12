@@ -31,6 +31,15 @@ class ArticuloCarritoController extends CrudController{
 			$carrito 							= new \App\Carrito();
 			$carrito->usuario_id 	= $usuario->id;
 			$carrito->save();
+
+			$ac 							= new \App\ArticuloCarrito();
+
+			$ac->carrito_id 	= $carrito->id;
+			$ac->articulo_id	= (int)$request->input('articulo_id');
+			$ac->cantidad 		= (int)$request->input('cantidad');
+			$ac->save();
+
+			return redirect() -> intended('/carrito');
 		}
 		$carrito 					= $carrito[0];
 		$ac 							= new \App\ArticuloCarrito();
