@@ -8,6 +8,7 @@ use \Serverfireteam\Panel\CrudController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 use App\Categoria;
 use App\Articulo;
@@ -37,8 +38,16 @@ class ArticuloController extends CrudController {
     }
 
     public function anteriormenteComprado($id){
-      $flag   = false;
-
+      $flag     = false;
+      $articulo = DB::table('articulos as a')
+                  ->join('articulo_carritos as ac','a.id','ac.articulo_id')
+                  ->join('carritos as c','c.id','ac.carrito_id')
+                  ->join('ventas as v','v.carrito_id','c.id')
+                  ->where('a.id',$id)
+                  ->where('c.usuario_id',Auth::id())
+                  ->get();
+      if(sizeof($articulo) > 0 )
+        $flag = true;
       return $flag;
     }
 
