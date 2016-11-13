@@ -29,13 +29,14 @@
 		<div class="col-md-5">
 			<h1>{{$articulo->nombre}}</h1>
 			<div class="ratings">
-				<p class="pull-right">15 reviews</p>
+				<p class="pull-right">{{sizeof($articulo->comentarios)}} comentarios</p>
 				<p>
-					<span class="glyphicon glyphicon-star"></span>
-					<span class="glyphicon glyphicon-star"></span>
-					<span class="glyphicon glyphicon-star"></span>
-					<span class="glyphicon glyphicon-star"></span>
-					<span class="glyphicon glyphicon-star-empty"></span>
+					@for($i=0; $i<$articulo->calificacion;$i++)
+						<span class="glyphicon glyphicon-star"></span>
+					@endfor
+					@for($i=$articulo->calificacion; $i<5;$i++)
+						<span class="glyphicon glyphicon-star-empty"></span>
+					@endfor
 				</p>
 			</div>
 			<p>Precio: ${{$articulo->precio}}</p>

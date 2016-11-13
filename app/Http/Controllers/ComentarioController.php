@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use \Serverfireteam\Panel\CrudController;
+
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -18,6 +20,15 @@ class ComentarioController extends CrudController{
       $comentario->calificacion = (int)$request->input('calificacion');
       $comentario->comentario   = $request->input('comentario');
       $comentario->save();
+
+      $calificacion             = DB::table('comentarios')
+                                  ->where('articulo_id', (int)$request->input('articulo_id') )
+                                  ->avg('calificacion');
+
+
+      $articulo                 = \App\Articulo::find( (int)$request->input('articulo_id') );
+      $articulo->calificacion   = (int)$calificacion;
+      $articulo->save();
 
       return redirect() -> intended('/articulo/'.$request->input('articulo_id'));
     }
