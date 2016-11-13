@@ -94,34 +94,26 @@
 	</div>
 	<hr>
 	<div class="row">
+		@foreach($articulo->comentarios as $c)
 		<blockquote>
-			<h2>Comentario #1</h2>
+			<p>{{ $c->comentario }}</p>
+			<p>— {{$c->usuario->nombre}}</p>
+			<p>{{$c->calificacion}}</p>
 			<div class="ratings">
 				<p>
-					<span class="glyphicon glyphicon-star"></span>
-					<span class="glyphicon glyphicon-star"></span>
-					<span class="glyphicon glyphicon-star"></span>
+					@for($i=0; $i<$c->calificacion;$i++)
+						<span class="glyphicon glyphicon-star"></span>
+					@endfor
+					@for($i=$c->calificacion; $i<5;$i++)
+						<span class="glyphicon glyphicon-star-empty"></span>
+					@endfor
+					<!--
 					<span class="glyphicon glyphicon-star-empty"></span>
-					<span class="glyphicon glyphicon-star-empty"></span>
+					-->
 				</p>
 			</div>
-			<p>Este es un ejemplo de comentario, recibe 3 de 5 estrellas</p>
-			<p>— Autor</p>
 		</blockquote>
-		<blockquote>
-			<h2>Comentario #2</h2>
-			<div class="ratings">
-				<p>
-					<span class="glyphicon glyphicon-star"></span>
-					<span class="glyphicon glyphicon-star"></span>
-					<span class="glyphicon glyphicon-star"></span>
-					<span class="glyphicon glyphicon-star"></span>
-					<span class="glyphicon glyphicon-star"></span>
-				</p>
-			</div>
-			<p>Este es un ejemplo de comentario, recibe 5 de 5 estrellas</p>
-			<p>— Autor</p>
-		</blockquote>
+		@endforeach
 	</div>
 </div>
 @stop

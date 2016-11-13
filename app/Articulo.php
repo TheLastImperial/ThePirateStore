@@ -15,4 +15,7 @@ class Articulo extends Model {
     public function imagen(){
       return $this->hasMany('App\Imagen');
     }
+    public function comentarios(){
+      return $this->hasMany('App\Comentario');
+    }
 }
