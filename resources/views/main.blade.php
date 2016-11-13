@@ -63,14 +63,16 @@
 									</h4>
 									<p>{{$a->descripcion}}</p>
 								</div>
+
 								<div class="ratings">
-									<p class="pull-right">15 reviews</p>
+									<p class="pull-right">{{sizeof($a->comentarios)}} comentarios</p>
 									<p>
-										<span class="glyphicon glyphicon-star"></span>
-										<span class="glyphicon glyphicon-star"></span>
-										<span class="glyphicon glyphicon-star"></span>
-										<span class="glyphicon glyphicon-star"></span>
-										<span class="glyphicon glyphicon-star"></span>
+										@for($i=0; $i<$a->calificacion;$i++)
+											<span class="glyphicon glyphicon-star"></span>
+										@endfor
+										@for($i=$a->calificacion; $i<5;$i++)
+											<span class="glyphicon glyphicon-star-empty"></span>
+										@endfor
 									</p>
 								</div>
 							</div>
