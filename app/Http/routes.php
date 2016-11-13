@@ -15,9 +15,9 @@ Route::get('/','CategoriaController@index');
 Route::get('/categorias/{categoria}','ArticuloController@articulosCategoria');
 Route::get('/articulo/{id}','ArticuloController@articulo');
 /* Carrito */
-Route::post('/articulocarrito/agregar','ArticuloCarritoController@agregar');
-Route::get('/carrito','CarritoController@mostrar');
-Route::post('/venta','VentaController@comprar');
+Route::post('/articulocarrito/agregar','ArticuloCarritoController@agregar')->middleware('auth');
+Route::get('/carrito','CarritoController@mostrar')->middleware('auth');
+Route::post('/venta','VentaController@comprar')->middleware('auth');
 /* Usuarios */
 Route::post('/login','UsuarioController@login');
 Route::get('/registro', function () {
@@ -26,4 +26,4 @@ Route::get('/registro', function () {
 Route::post('/registro/registrar','UsuarioController@register');
 Route::get('/salir','UsuarioController@logout');
 
-Route::post('/comentario','ComentarioController@comentar');
+Route::post('/comentario','ComentarioController@comentar')->middleware('auth');
