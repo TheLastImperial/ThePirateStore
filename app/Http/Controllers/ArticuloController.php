@@ -28,8 +28,7 @@ class ArticuloController extends CrudController {
     public function articulo($id) {
         $categorias  = Categoria::orderBy('nombre','asc')
                                 ->get();
-        $articulo = Articulo::where('id','=',$id)->get();
-
+        $articulo = Articulo::find($id);
         // la variable comprado nos indica si
         // el usuario ha comprado el articulo anteriormente
         $comprado = Auth::check() && $this->anteriormenteComprado($id);

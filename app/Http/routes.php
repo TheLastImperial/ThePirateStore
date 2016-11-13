@@ -25,3 +25,5 @@ Route::get('/registro', function () {
 });
 Route::post('/registro/registrar','UsuarioController@register');
 Route::get('/salir','UsuarioController@logout');
+
+Route::post('/comentario','ComentarioController@comentar');
