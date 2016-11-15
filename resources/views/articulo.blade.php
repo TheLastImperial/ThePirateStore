@@ -39,7 +39,7 @@
 					@endfor
 				</p>
 			</div>
-			<p>Precio: ${{$articulo->precio}}</p>
+			<p>Precio: ${{formato($articulo->precio)}}</p>
 			<p>Descripción: {{$articulo->descripcion}}</p>
 		</div>
 		<div class="col-md-3">

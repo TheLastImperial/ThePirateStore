@@ -41,7 +41,7 @@ table { border-collapse:collapse;border-spacing:0; }
 
 @section('categorias')
 	@foreach($categorias as $c)
-	<li><a href="../../categorias/{{$c->nombre}}" class="[ animate ]">{{$c->nombre}}</a></li>
+	<li><a href="categorias/{{$c->nombre}}" class="[ animate ]">{{$c->nombre}}</a></li>
 	@endforeach
 @stop
 
@@ -61,24 +61,24 @@ table { border-collapse:collapse;border-spacing:0; }
 					</tr>
 				</thead>
 				<tbody>
-					{!! $total = 0; !!}
+					<?php $total = 0 ?>
 					@foreach($carrito->articuloCarrito as $ac)
 					<tr>
 						<td class="tg-b7b8">{{$ac->articulo->nombre}}</td>
-						<td class="tg-b7b8">{{$ac->articulo->precio}}</td>
+						<td class="tg-b7b8">${{formato($ac->articulo->precio)}}</td>
 						<td class="tg-b7b8">{{$ac->cantidad}}</td>
-							 {!!
-								 $t 		=  $ac->cantidad * $ac->articulo->precio;
-								 $total += $t;
-							 !!}
-						<td class="tg-b7b8">{{$t}}</td>
+							@php
+								$t =  $ac->cantidad * $ac->articulo->precio;
+								$total += $t;
+							@endphp
+						<td class="tg-b7b8">${{formato($t)}}</td>
 					</tr>
 					@endforeach
 					<tr>
 						<td class="tg-b7b8"></td>
 						<td class="tg-b7b8"></td>
 						<td class="tg-b7b8">Total: </td>
-						<td class="tg-b7b8">${{$total}}</td>
+						<td class="tg-b7b8">${{formato($total)}}</td>
 					</tr>
 				</tbody>
 			</table>

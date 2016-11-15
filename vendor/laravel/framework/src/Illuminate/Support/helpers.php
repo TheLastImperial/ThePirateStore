@@ -890,3 +890,18 @@ if (! function_exists('with')) {
         return $object;
     }
 }
+
+if (! function_exists('formato')) {
+    /**
+     * Return the given object. Useful for chaining.
+     *
+     * @param  mixed  $object
+     * @return mixed
+     */
+    function formato($precio)
+    {
+        $precio = number_format($precio,2,'.',',');
+
+        return $precio;
+    }
+}
