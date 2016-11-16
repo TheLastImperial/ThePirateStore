@@ -14,6 +14,7 @@
 Route::get('/','CategoriaController@index');
 Route::get('/categorias/{categoria}','ArticuloController@articulosCategoria');
 Route::get('/articulo/{id}','ArticuloController@articulo');
+Route::post('/buscar','ArticuloController@buscar');
 /* Carrito */
 Route::post('/articulocarrito/agregar','ArticuloCarritoController@agregar')->middleware('auth');
 Route::get('/carrito','CarritoController@mostrar')->middleware('auth');

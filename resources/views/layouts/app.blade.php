@@ -29,9 +29,9 @@
 				<div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
 					<ul class="[ nav navbar-nav navbar-right ]">
 						<li class="[ visible-xs ]">
-							<form action="http://bootsnipp.com/search" method="GET" role="search">
+							<form action="http://bootsnipp.com/search" method="GET">
 								<div class="[ input-group ]">
-									<input type="text" class="[ form-control ]" name="q" placeholder="Search for snippets">
+									<input type="text" class="[ form-control ]" placeholder="Search for snippets">
 									<span class="[ input-group-btn ]">
 										<button class="[ btn btn-primary ]" type="submit"><span class="[ glyphicon glyphicon-search ]"></span></button>
 										<button class="[ btn btn-danger ]" type="reset"><span class="[ glyphicon glyphicon-remove ]"></span></button>
@@ -57,7 +57,8 @@
 			</div>
 			<div class="[ bootsnipp-search animate ]">
 				<div class="[ container ]">
-					<form action="http://bootsnipp.com/search" method="GET" role="search">
+					<form action="{{url('buscar')}}" method="POST" role="search">
+						<input type="hidden" name="_token" value="{{csrf_token() }}">
 						<div class="[ input-group ]">
 							<input type="text" class="[ form-control ]" name="q" placeholder="Busca artículos por palabras clave, modelo, etc ...">
 							<span class="[ input-group-btn ]">

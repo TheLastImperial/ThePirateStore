@@ -35,7 +35,15 @@ class ArticuloController extends CrudController {
 
         return view('articulo', compact('categorias','articulo','comprado'));
     }
+    public function buscar(Request $request) {
+        $query      = $request->input('q');
+        $categorias = Categoria::orderBy('nombre','asc')
+                              ->get();
+        $articulos  = Articulo::where('nombre','like','%'.$query.'%')
+                              ->get();
 
+        return view('categorias', compact('categorias','articulos'));
+    }
     public function anteriormenteComprado($id){
       $flag     = false;
       $articulo = DB::table('articulos as a')
