@@ -13,16 +13,34 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<!-- Formato sacado de Amazon, ver ejemplo:
-				https://www.amazon.com.mx/Kindle-Paperwhite-pantalla-resoluci%C3%B3n-integrada/dp/B00QJDONQY/ref=lp_9482558011_1_2?s=electronics&ie=UTF8&qid=1478449611&sr=1-2
-		-->
 		<div class="col-md-4">
 			<div class="row">
 				<div class="col-md-2">
-					Sección de thumbnails
+					<div class="row">
+						<a href="#" id="t1" class="thumbnail">
+    						<img src="http://placehold.it/100x100" alt="...">
+    					</a>
+					</div>
+					<div class="row">
+						<a href="#" id="t2" class="thumbnail">
+    						<img src="http://placehold.it/200x200" alt="...">
+    					</a>
+					</div>
+					<div class="row">
+						<a href="#" id="t3" class="thumbnail">
+    						<img src="http://placehold.it/300x300" alt="...">
+    					</a>
+					</div>
+					<div class="row">
+						<a href="#" id="t4" class="thumbnail">
+    						<img src="http://placehold.it/332x332" alt="...">
+    					</a>
+					</div>
 				</div>
 				<div class="col-md-10">
-					Sección de imagen
+					<div class="row">
+						<img id="img" src="http://placehold.it/332x332" alt="{{$articulo->nombre}}" style="width:332px;height:332px;">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -70,9 +88,6 @@
 	</div>
 	<hr>
 	<div class="row">
-		<!-- Esto sólo debe de ser visible si estás conectado y si has comprado el artículo
-			 Para que aparezca cuando estás conectado, usar Auth::check()
-		-->
 		@if($comprado)
 		<div class="col-md-5">
 			<form role="form" class="form-horizontal" method="post" action="{{url("/comentario")}}">
@@ -108,13 +123,14 @@
 					@for($i=$c->calificacion; $i<5;$i++)
 						<span class="glyphicon glyphicon-star-empty"></span>
 					@endfor
-					<!--
-					<span class="glyphicon glyphicon-star-empty"></span>
-					-->
 				</p>
 			</div>
 		</blockquote>
 		@endforeach
 	</div>
 </div>
+@stop
+
+@section('scripts')
+<script src='{{asset("js/thumbnails.js")}}'></script>
 @stop
