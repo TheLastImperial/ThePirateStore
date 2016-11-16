@@ -17,11 +17,11 @@
 							<input type="hidden" name="_token" value="{{csrf_token() }}">
 							<img src='<?= asset("img/logo.png") ?>' alt="The Pirate Store" class="img-responsive">
 							<input type="text" id="nombre" name="nombre" placeholder="Nombre de usuario" required class="form-control input-lg" />
-							<input type="email" name="email" placeholder="tucorreo@ejemplo.com" required class="form-control input-lg" />
-							<input type="email" name="email_verificacion" placeholder="tucorreo@ejemplo.com" required autocomplete="off" class="form-control input-lg" />
+							<input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required class="form-control input-lg" />
+							<input type="email" id="email_verificacion" name="email_verificacion" placeholder="tucorreo@ejemplo.com" required autocomplete="off" class="form-control input-lg" />
 							<input type="password" class="form-control input-lg" id="password" placeholder="Contraseña" required />
 							<div class="pwstrength_viewport_progress"></div>
-							<button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Crear cuenta</button>
+							<button type="submit" id="go" name="go" class="btn btn-lg btn-primary btn-block">Crear cuenta</button>
 						</form>
 					</section>	
 				</div>

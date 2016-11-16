@@ -28,9 +28,34 @@ jQuery(document).ready(function() {
 
 (function (jQuery) {
 // Source: src/rules.js
+var correoValido;
 
+$("#email_verificacion").blur(function(event) {
+    var correo = $("#email");
+    var verificacion = $("#email_verificacion");
+    if(verificacion.val() == correo.val()) {
+        correo.css('border-color', '#22B330');
+        verificacion.css('border-color', '#22B330');
+        correoValido = true;
+    }
+    else {
+        correo.css('border-color', '#F10707');
+        verificacion.css('border-color', '#F10707');
+        correoValido = false;
+    }
+    
+});
 
-
+$("#go").click(function(event) {
+    if(!correoValido) {
+        event.preventDefault();
+        alert('Los correos electrónicos no coinciden');
+    }
+    if($(".error-list li").length > 0) {
+        event.preventDefault();
+        alert('La contraseña no cumple con los requisitos mínimos de seguridad');
+    }
+});
 
 var rulesEngine = {};
 
@@ -270,7 +295,7 @@ defaultOptions.ui.errorMessages = {
     wordRepetitions: "Muchas repeticiones",
     wordSequences: "Tu contraseña no puede contener secuencias"
 };
-defaultOptions.ui.verdicts = ["Débil", "Normal", "Medio", "Strong", "Very Strong"];
+defaultOptions.ui.verdicts = ["Débil", "Normal", "Medio", "Fuerte", "Muy Fuerte"];
 defaultOptions.ui.showVerdicts = true;
 defaultOptions.ui.showVerdictsInsideProgressBar = false;
 defaultOptions.ui.showErrors = true;

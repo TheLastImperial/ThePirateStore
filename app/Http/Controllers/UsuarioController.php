@@ -19,6 +19,11 @@ class UsuarioController extends CrudController{
     	$nombre		= $request->input('nombre');
     	$correo		= $request->input('email');
     	$contrasena = $request->input('password');
+        //Verificar que no exista antes el correo
+        $usuario    = Usuario::where('correo', '=', $correo)->first();
+        if(isset($usuario)) {
+            return redirect() -> intended('/') -> withError('Ya existe un usuario registrado con ese correo');
+        }
     	//Guardar en BD
     	$nuevo = new Usuario;
     	$nuevo -> nombre 	 = $nombre;
@@ -26,7 +31,6 @@ class UsuarioController extends CrudController{
     	$nuevo -> contrasena = bcrypt($contrasena);
     	$nuevo -> save();
 
-        $usuario = Usuario::where('correo', '=', $correo)->first();
         if(isset($usuario)) {
             if(Hash::check($contrasena,$usuario->contrasena)) {
                         Auth::login($usuario);
