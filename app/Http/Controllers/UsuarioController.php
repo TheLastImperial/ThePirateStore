@@ -26,18 +26,26 @@ class UsuarioController extends CrudController{
     	$nuevo -> contrasena = bcrypt($contrasena);
     	$nuevo -> save();
 
+        $usuario = Usuario::where('correo', '=', $correo)->first();
+        if(isset($usuario)) {
+            if(Hash::check($contrasena,$usuario->contrasena)) {
+                        Auth::login($usuario);
+                return redirect() -> intended('/');
+            }
+        }
+
     	return redirect() -> intended('/');
     }
     public function login(Request $request) {
     	$correo		= $request->input('email');
     	$contrasena = $request->input('password');
     	$usuario 	= Usuario::where('correo', '=', $correo)->first();
-			if(isset($usuario)) {
-			    if(Hash::check($contrasena,$usuario->contrasena)) {
-			        		Auth::login($usuario);
-	                return redirect() -> intended('/');
-			    }
-			}
+		if(isset($usuario)) {
+		    if(Hash::check($contrasena,$usuario->contrasena)) {
+		        		Auth::login($usuario);
+                return redirect() -> intended('/');
+		    }
+		}
     	return redirect() -> intended('/');
     }
     public function logout() {

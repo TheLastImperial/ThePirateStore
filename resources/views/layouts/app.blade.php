@@ -21,7 +21,7 @@
 						<span class="[ icon-bar ]"></span>
 					</button>
 					<div class="[ animbrand ]">
-						<a class="[ navbar-brand ][ animate ]" href="#"><img src='<?= asset("img/logo.png") ?>' alt="The Pirate Store" class="responsive"></a>
+						<a class="[ navbar-brand ][ animate ]" href='{{url("/")}}'><img src='<?= asset("img/logo.png") ?>' alt="The Pirate Store" class="responsive"></a>
 					</div>
 				</div>
 
