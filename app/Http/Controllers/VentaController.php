@@ -27,11 +27,14 @@ class VentaController extends CrudController{
       $venta = new \App\Venta();
       $venta->carrito_id  = $request->input('carrito_id');
       $venta->total       = $request->input('total');
-      $venta->save();
+      
+      if (!($venta->save()))
+        return redirect() -> intended('/') -> withError('Falló la venta.');
 
+      return redirect() -> intended('/') -> withSuccess('Venta completada con éxito. Tu producto llegará pronto.');
 
       // DEBE REDIRECCIONAR HACIA UN GACIAS POR COMPRAR
-      return redirect() -> intended('/');
+      
     }
     public function all($entity){
         parent::all($entity);

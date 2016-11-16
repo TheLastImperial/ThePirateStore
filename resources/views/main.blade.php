@@ -11,14 +11,25 @@
 @stop
 
 @section('content')
+@if(Session::has('success'))
+	<div class="alert alert-success" role="alert">
+		{{ Session::get( 'success' ) }}
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+@elseif(Session::has('error'))
+	<div class="alert alert-danger" role="alert">
+		{{ Session::get( 'error' ) }}
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+@endif
 <div class="container">
-
 		<div class="row">
-
 			<div class="col-md-12">
-
 				<div class="row carousel-holder">
-
 					<div class="col-md-12">
 						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 							<ol class="carousel-indicators">
