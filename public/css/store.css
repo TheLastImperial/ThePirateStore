@@ -13,6 +13,10 @@ footer {
 textarea {
     resize: none;
 }
+.agotado {
+    color: #F10707;
+    font-weight: bold;
+}
 .slide-image {
     width: 100%;
 }
