@@ -2,41 +2,7 @@
 
 @section('styles')
 <link rel="stylesheet" href='<?= asset("css/store.css") ?>'>
-<style>
-	.row::after {
-	content: "";
-	clear: both;
-	display: block;
-}
-.tg  {
-	border-collapse:collapse;
-	border-spacing:0;
-	border-color:#ccc;
-	width: 100%;
-	margin-bottom: 1em;
-}
-table { border-collapse:collapse;border-spacing:0; }
-.tg td {
-	font-family:Arial, sans-serif;
-	font-size:14px;
-	padding:10px 8px;
-	border-style:solid;
-	border-width:0px;
-	overflow:hidden;
-	word-break:normal;
-}
-.tg th {
-	font-family:Arial, sans-serif;
-	font-size:14px;
-	font-weight:bold;
-	padding:10px 8px;
-	border-style:solid;
-	border-width:0px;
-	overflow:hidden;
-	word-break:normal;
-}
-.tg .tg-b7b8{background-color:#f9f9f9;vertical-align:top;}
-</style>
+<link rel="stylesheet" href='<?= asset("css/carrito.css") ?>'>
 @stop
 
 @section('categorias')

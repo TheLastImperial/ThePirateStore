@@ -5,21 +5,7 @@
 		<title>The Pirate Store</title>
 		<link rel="stylesheet" href='<?= asset("css/bootstrap.min.css") ?>'>
 		<link rel="stylesheet" href='<?= asset("css/login.css") ?>'>
-		<style>
-		* {
-    -webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-	outline: none;
-}
-			body {
-				background: -webkit-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Chrome 10+, Saf5.1+ */
-				background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
-				background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
-				background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
-				background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
-			}
-		</style>
+		<link rel="stylesheet" href='<?= asset("css/registro.css") ?>'>
 	</head>
 	<body>
 		<div class="container">
