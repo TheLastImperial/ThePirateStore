@@ -36,18 +36,27 @@
 								<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 								<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="4"></li>
 							</ol>
 							<div class="carousel-inner">
+
 								<div class="item active">
-									<img class="slide-image" src="http://placehold.it/1140x300" alt="">
+									<img class="slide-image" src="{{asset('imagenes/articulos')}}/{{$articulos[0]->imagen[0]->imagen}}" alt="" style="width:332px;height:332px;">
 								</div>
+
+								@for($i = 1; $i<5; $i++)
 								<div class="item">
-									<img class="slide-image" src="http://placehold.it/1140x300" alt="">
+									@if(sizeof($articulos[$i]->imagen) > 0 )
+										<img class="slide-image" src="{{asset('imagenes/articulos')}}/{{$articulos[$i]->imagen[0]->imagen}}" alt="" style="width:332px;height:332px;">
+									@else
+										<img class="slide-image" src="{{asset('img/default-image.jpg')}}" alt="" style="width:332px;height:332px;">
+									@endif
 								</div>
-								<div class="item">
-									<img class="slide-image" src="http://placehold.it/1140x300" alt="">
-								</div>
+								@endfor
+
 							</div>
+
 							<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
 								<span class="glyphicon glyphicon-chevron-left"></span>
 							</a>
