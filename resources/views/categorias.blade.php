@@ -44,7 +44,14 @@
 					@endif
 					<div class="col-sm-4 col-lg-4 col-md-4">
 						<div class="thumbnail">
-							<img src="http://placehold.it/320x150" alt="">
+							@if(sizeof($a->imagen) > 0)
+								<!---
+								<img src="imagenes/articulos/{{$a->imagen[0]->imagen}}" alt="{{$a->nombre}}" style="width:355px;height:228px;">
+								--->
+								<img src="{{asset('imagenes/articulos')}}/{{$a->imagen[0]->imagen}}" alt="{{$a->nombre}}" style="width:355px;height:228px;">
+							@else
+								<img src="{{asset('img/default-image.jpg')}}" alt="{{$a->nombre}}" style="width:355px;height:228px;">
+							@endif
 							<div class="caption">
 								<h4 class="pull-right">${{formato($a->precio)}}</h4>
 								<h4><a href='{{url("articulo/".$a->id)}}'>{{$a->nombre}}</a>
@@ -52,13 +59,14 @@
 								<p>{{$a->descripcion}}.</p>
 							</div>
 							<div class="ratings">
-								<p class="pull-right">15 reviews</p>
+								<p class="pull-right">{{sizeof($a->comentarios)}} comentarios</p>
 								<p>
-									<span class="glyphicon glyphicon-star"></span>
-									<span class="glyphicon glyphicon-star"></span>
-									<span class="glyphicon glyphicon-star"></span>
-									<span class="glyphicon glyphicon-star"></span>
-									<span class="glyphicon glyphicon-star-empty"></span>
+									@for($i=0; $i<$a->calificacion;$i++)
+										<span class="glyphicon glyphicon-star"></span>
+									@endfor
+									@for($i=$a->calificacion; $i<5;$i++)
+										<span class="glyphicon glyphicon-star-empty"></span>
+									@endfor
 								</p>
 							</div>
 						</div>
