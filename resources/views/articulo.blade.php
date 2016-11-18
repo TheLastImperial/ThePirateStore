@@ -14,38 +14,37 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
+
 			<div class="row">
-				<div class="col-md-2">
-					
-					<div class="row">
-						<a href="#" id="t1" class="thumbnail">
-    						<img src="http://placehold.it/100x100" alt="...">
-    					</a>
-					</div>
-					<div class="row">
-						<a href="#" id="t2" class="thumbnail">
-    						<img src="http://placehold.it/200x200" alt="...">
-    					</a>
-					</div>
-					<div class="row">
-						<a href="#" id="t3" class="thumbnail">
-    						<img src="http://placehold.it/300x300" alt="...">
-    					</a>
-					</div>
-					<div class="row">
-						<a href="#" id="t4" class="thumbnail">
-    						<img src="http://placehold.it/332x332" alt="...">
-    					</a>
-					</div>
-				</div>
+				@if( sizeof($articulo->imagen) >1 )
+					<div class="col-md-2">
 
-				<div class="col-md-10">
-					<div class="row">
-						<img id="img" src="http://placehold.it/332x332" alt="{{$articulo->nombre}}" style="width:332px;height:332px;">
-					</div>
-				</div>
+						@for($i = 1; $i<sizeof($articulo->imagen);$i++)
+							<div class="row">
+								<a href="#" id="z{{$i}}" class="thumbnail">
+		    					<img src="{{asset('imagenes/articulos')}}/{{$articulo->imagen[$i]->imagen}}" alt="{{$articulo->nombre}}">
+		    				</a>
+							</div>
+						@endfor
 
+					</div>
+				@endif
+
+				@if(sizeof($articulo->imagen) >0)
+					<div class="col-md-10">
+						<div class="row">
+							<img id="img" src="{{asset('imagenes/articulos')}}/{{$articulo->imagen[0]->imagen}}" alt="{{$articulo->nombre}}" style="width:332px;height:332px;">
+						</div>
+					</div>
+				@else
+					<div class="col-md-10">
+						<div class="row">
+							<img id="img" src="{{asset('img/default-image.jpg')}}" alt="{{$articulo->nombre}}" style="width:332px;height:332px;">
+						</div>
+					</div>
+				@endif
 			</div>
+
 		</div>
 		<div class="col-md-5">
 			<h1>{{$articulo->nombre}}</h1>
