@@ -22,8 +22,9 @@ class ImagenController extends CrudController{
 			$this->filter->reset('reset');
 			$this->filter->build();
 
-			$this->grid = \DataGrid::source($this->filter);
+			$this->grid = \DataGrid::source(\App\Imagen::with('articulo'));
 			$this->grid->add('id', 'ID');
+      $this->grid->add('articulo.nombre','Articulo');
 			$this->grid->add('imagen', 'Imagen');
 			$this->addStylesToGrid();
 
