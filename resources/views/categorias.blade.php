@@ -6,7 +6,7 @@
 
 @section('categorias')
 	@foreach($categorias as $c)
-	<li><a href="{{$c->nombre}}" class="[ animate ]">{{$c->nombre}}</a></li>
+	<li><a href='{{url("/categorias")."/".$c->nombre}}' class="[ animate ]">{{$c->nombre}}</a></li>
 	@endforeach
 @stop
 

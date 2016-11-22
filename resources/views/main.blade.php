@@ -33,24 +33,31 @@
 					<div class="col-md-12">
 						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 							<ol class="carousel-indicators">
-								<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="5" class="active"></li>
 								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 								<li data-target="#carousel-example-generic" data-slide-to="2"></li>
 								<li data-target="#carousel-example-generic" data-slide-to="3"></li>
 								<li data-target="#carousel-example-generic" data-slide-to="4"></li>
 							</ol>
+
+
+
 							<div class="carousel-inner">
 
 								<div class="item active">
-									<img class="slide-image" src="{{asset('imagenes/articulos')}}/{{$articulos[0]->imagen[0]->imagen}}" alt="" style="width:332px;height:332px;">
+									@if(sizeof($articulos[0]->imagen) > 0)
+										<a href="{{url("articulo/".$articulos[0]->id)}}"><img class="slide-image" src="{{asset('imagenes/articulos')}}/{{$articulos[0]->imagen[0]->imagen}}" alt="" style="width:332px;height:332px;"></a>
+									@else
+										<a href="{{url("articulo/".$articulos[0]->id)}}"><img class="slide-image" src="{{asset('img/default-image.jpg')}}" alt="" style="width:332px;height:332px;"></a>
+									@endif
 								</div>
 
 								@for($i = 1; $i<5; $i++)
 								<div class="item">
 									@if(sizeof($articulos[$i]->imagen) > 0 )
-										<img class="slide-image" src="{{asset('imagenes/articulos')}}/{{$articulos[$i]->imagen[0]->imagen}}" alt="" style="width:332px;height:332px;">
+										<a href="{{url("articulo/".$articulos[$i]->id)}}"><img class="slide-image" src="{{asset('imagenes/articulos')}}/{{$articulos[$i]->imagen[0]->imagen}}" alt="" style="width:332px;height:332px;"></a>
 									@else
-										<img class="slide-image" src="{{asset('img/default-image.jpg')}}" alt="" style="width:332px;height:332px;">
+										<a href="{{url("articulo/".$articulos[$i]->id)}}"><img class="slide-image" src="{{asset('img/default-image.jpg')}}" alt="" style="width:332px;height:332px;"></a>
 									@endif
 								</div>
 								@endfor
@@ -65,7 +72,7 @@
 							</a>
 						</div>
 					</div>
-
+ 
 				</div>
 
 				<div class="row">
@@ -73,9 +80,9 @@
 						<div class="col-sm-4 col-lg-4 col-md-4">
 							<div class="thumbnail">
 								@if(sizeof($a->imagen) > 0)
-									<img src="imagenes/articulos/{{$a->imagen[0]->imagen}}" alt="{{$a->nombre}}" style="width:355px;height:228px;">
+									<a href='{{url("articulo/".$a->id)}}'><img src="imagenes/articulos/{{$a->imagen[0]->imagen}}" alt="{{$a->nombre}}" style="width:355px;height:228px;"></a>
 								@else
-									<img src="img/default-image.jpg" alt="{{$a->nombre}}" style="width:355px;height:228px;">
+									<a href='{{url("articulo/".$a->id)}}'><img src="img/default-image.jpg" alt="{{$a->nombre}}" style="width:355px;height:228px;"></a>
 								@endif
 								<div class="caption">
 									<h4 class="pull-right">${{formato($a->precio)}}</h4>

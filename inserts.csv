@@ -1,0 +1,2 @@
+nombre, descripcion, precio, cantidad, activo, categoria_id, created_at, updated_at
+Garfio,"Garfio de plata del caribe",120,10,1,2,12-12-12,12-12-12
