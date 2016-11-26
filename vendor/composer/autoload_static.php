@@ -10,12 +10,9 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
-        '14812156da62770d06ccc3ede5af6de1' => __DIR__ . '/..' . '/zofe/burp/src/helpers.php',
-        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
@@ -26,11 +23,6 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
-        'Z' => 
-        array (
-            'Zofe\\Rapyd\\' => 11,
-            'Zofe\\Burp\\' => 10,
-        ),
         'X' => 
         array (
             'XdgBaseDir\\' => 11,
@@ -38,10 +30,6 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
-        ),
-        'T' => 
-        array (
-            'TijsVerkoyen\\CssToInlineStyles\\' => 31,
         ),
         'S' => 
         array (
@@ -71,8 +59,6 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         array (
             'Psy\\' => 4,
             'Psr\\Log\\' => 8,
-            'Psr\\Http\\Message\\' => 17,
-            'Psr\\Cache\\' => 10,
             'PhpParser\\' => 10,
         ),
         'M' => 
@@ -81,17 +67,11 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         ),
         'L' => 
         array (
-            'League\\Flysystem\\Cached\\' => 24,
             'League\\Flysystem\\' => 17,
         ),
         'I' => 
         array (
-            'Intervention\\Image\\' => 19,
             'Illuminate\\' => 11,
-        ),
-        'G' => 
-        array (
-            'GuzzleHttp\\Psr7\\' => 16,
         ),
         'F' => 
         array (
@@ -104,14 +84,8 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         ),
         'C' => 
         array (
-            'Collective\\Html\\' => 16,
             'ClassPreloader\\' => 15,
             'Carbon\\' => 7,
-        ),
-        'B' => 
-        array (
-            'Barryvdh\\elFinderFlysystemDriver\\' => 33,
-            'Barryvdh\\Elfinder\\' => 18,
         ),
         'A' => 
         array (
@@ -123,16 +97,8 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-        ),
-        'Zofe\\Rapyd\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/serverfireteam/rapyd-laravel/src',
-        ),
-        'Zofe\\Burp\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zofe/burp/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -141,10 +107,6 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
-        ),
-        'TijsVerkoyen\\CssToInlineStyles\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
         ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
@@ -226,14 +188,6 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
-        'Psr\\Http\\Message\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-        ),
-        'Psr\\Cache\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/cache/src',
-        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -242,25 +196,13 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'League\\Flysystem\\Cached\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/league/flysystem-cached-adapter/src',
-        ),
         'League\\Flysystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
         ),
-        'Intervention\\Image\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
-        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
-        ),
-        'GuzzleHttp\\Psr7\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
         'Faker\\' => 
         array (
@@ -274,10 +216,6 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
-        'Collective\\Html\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laravelcollective/html/src',
-        ),
         'ClassPreloader\\' => 
         array (
             0 => __DIR__ . '/..' . '/classpreloader/classpreloader/src',
@@ -286,14 +224,6 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
-        'Barryvdh\\elFinderFlysystemDriver\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/barryvdh/elfinder-flysystem-driver/src',
-        ),
-        'Barryvdh\\Elfinder\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src',
-        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -301,22 +231,11 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
     );
 
     public static $prefixesPsr0 = array (
-        'S' => 
-        array (
-            'Serverfireteam\\Panel' => 
-            array (
-                0 => __DIR__ . '/..' . '/serverfireteam/panel/src',
-            ),
-        ),
         'P' => 
         array (
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
-            ),
-            'PHPExcel' => 
-            array (
-                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
             ),
         ),
         'M' => 
@@ -324,10 +243,6 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
             'Mockery' => 
             array (
                 0 => __DIR__ . '/..' . '/mockery/mockery/library',
-            ),
-            'Maatwebsite\\Excel\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/maatwebsite/excel/src',
             ),
         ),
         'J' => 
@@ -358,23 +273,7 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
     );
 
     public static $classMap = array (
-        'AddArticuloCarritoTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_30_192548_add_articulo_carrito_table.php',
-        'AddArticulosTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_30_185618_add_articulos_table.php',
-        'AddCarritoTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_30_192430_add_carrito_table.php',
-        'AddCategoriasTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_30_185526_add_categorias_table.php',
-        'AddComentarioTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_30_191913_add_comentario_table.php',
-        'AddImageTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_04_155104_add_image_table.php',
-        'AddVentaTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_30_192910_add_venta_table.php',
-        'CreateAdminsTable' => __DIR__ . '/..' . '/serverfireteam/panel/src/database/migrations/2014_11_16_205658_create_admins_table.php',
-        'CreatePasswordRemindersTable' => __DIR__ . '/..' . '/serverfireteam/panel/src/database/migrations/2014_12_02_152920_create_password_reminders_table.php',
-        'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-        'CreateRolesTables' => __DIR__ . '/..' . '/serverfireteam/panel/src/database/migrations/2016_02_10_181651_create_roles_tables.php',
-        'CreateUrlTable' => __DIR__ . '/..' . '/serverfireteam/panel/src/database/migrations/2015_02_20_130902_create_url_table.php',
-        'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
-        'EditRolesTable' => __DIR__ . '/..' . '/serverfireteam/panel/src/database/migrations/2016_09_20_143956_edit_roles_table.php',
-        'EditUrlMenuTable' => __DIR__ . '/..' . '/serverfireteam/panel/src/database/migrations/2016_09_20_123956_edit_url_menu_table.php',
-        'EditUrlTable' => __DIR__ . '/..' . '/serverfireteam/panel/src/database/migrations/2015_03_15_123956_edit_url_table.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
@@ -446,33 +345,6 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
-        'Maatwebsite\\Excel\\Classes\\Cache' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/Cache.php',
-        'Maatwebsite\\Excel\\Classes\\FormatIdentifier' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/FormatIdentifier.php',
-        'Maatwebsite\\Excel\\Classes\\LaravelExcelWorksheet' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/LaravelExcelWorksheet.php',
-        'Maatwebsite\\Excel\\Classes\\PHPExcel' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/PHPExcel.php',
-        'Maatwebsite\\Excel\\Collections\\CellCollection' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Collections/CellCollection.php',
-        'Maatwebsite\\Excel\\Collections\\ExcelCollection' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Collections/ExcelCollection.php',
-        'Maatwebsite\\Excel\\Collections\\RowCollection' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Collections/RowCollection.php',
-        'Maatwebsite\\Excel\\Collections\\SheetCollection' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Collections/SheetCollection.php',
-        'Maatwebsite\\Excel\\Excel' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Excel.php',
-        'Maatwebsite\\Excel\\ExcelServiceProvider' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/ExcelServiceProvider.php',
-        'Maatwebsite\\Excel\\Exceptions\\LaravelExcelException' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Exceptions/LaravelExcelException.php',
-        'Maatwebsite\\Excel\\Facades\\Excel' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Facades/Excel.php',
-        'Maatwebsite\\Excel\\Files\\ExcelFile' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/ExcelFile.php',
-        'Maatwebsite\\Excel\\Files\\ExportHandler' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/ExportHandler.php',
-        'Maatwebsite\\Excel\\Files\\File' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/File.php',
-        'Maatwebsite\\Excel\\Files\\ImportHandler' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/ImportHandler.php',
-        'Maatwebsite\\Excel\\Files\\NewExcelFile' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/NewExcelFile.php',
-        'Maatwebsite\\Excel\\Filters\\ChunkReadFilter' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Filters/ChunkReadFilter.php',
-        'Maatwebsite\\Excel\\Parsers\\CssParser' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Parsers/CssParser.php',
-        'Maatwebsite\\Excel\\Parsers\\ExcelParser' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Parsers/ExcelParser.php',
-        'Maatwebsite\\Excel\\Parsers\\ViewParser' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Parsers/ViewParser.php',
-        'Maatwebsite\\Excel\\Readers\\Batch' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/Batch.php',
-        'Maatwebsite\\Excel\\Readers\\ConfigReader' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/ConfigReader.php',
-        'Maatwebsite\\Excel\\Readers\\Html' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/HtmlReader.php',
-        'Maatwebsite\\Excel\\Readers\\LaravelExcelReader' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/LaravelExcelReader.php',
-        'Maatwebsite\\Excel\\Writers\\CellWriter' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Writers/CellWriter.php',
-        'Maatwebsite\\Excel\\Writers\\LaravelExcelWriter' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Writers/LaravelExcelWriter.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
         'PHPUnit_Extensions_PhptTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
@@ -837,6 +709,7 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         'PHP_Token_STRING' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_STRING_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_STRING_VARNAME' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_SUPER' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_SWITCH' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_Stream' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token/Stream.php',
         'PHP_Token_Stream_CachingFactory' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php',
@@ -851,6 +724,7 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         'PHP_Token_UNSET' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_UNSET_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_USE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_USE_FUNCTION' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_VAR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_VARIABLE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_WHERE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
@@ -868,7 +742,6 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
-        'RecursiveCallbackFilterIterator' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeLocalFileSystem.class.php',
         'SebastianBergmann\\Comparator\\ArrayComparator' => __DIR__ . '/..' . '/sebastian/comparator/src/ArrayComparator.php',
         'SebastianBergmann\\Comparator\\Comparator' => __DIR__ . '/..' . '/sebastian/comparator/src/Comparator.php',
         'SebastianBergmann\\Comparator\\ComparisonFailure' => __DIR__ . '/..' . '/sebastian/comparator/src/ComparisonFailure.php',
@@ -905,48 +778,8 @@ class ComposerStaticInit01bf108bf88fcd3507613f886b35dddf
         'SebastianBergmann\\RecursionContext\\Exception' => __DIR__ . '/..' . '/sebastian/recursion-context/src/Exception.php',
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
-        'Serverfireteam\\Panel\\Admin' => __DIR__ . '/..' . '/serverfireteam/panel/src/models/Admin.php',
-        'Serverfireteam\\Panel\\AdminController' => __DIR__ . '/..' . '/serverfireteam/panel/src/controllers/AdminController.php',
-        'Serverfireteam\\Panel\\AuthController' => __DIR__ . '/..' . '/serverfireteam/panel/src/controllers/AuthController.php',
-        'Serverfireteam\\Panel\\Commands\\CreateControllerPanelCommand' => __DIR__ . '/..' . '/serverfireteam/panel/src/Serverfireteam/Panel/Commands/CreateControllerPanelCommand.php',
-        'Serverfireteam\\Panel\\Commands\\CreateModelCommand' => __DIR__ . '/..' . '/serverfireteam/panel/src/Serverfireteam/Panel/Commands/CreateModelCommand.php',
-        'Serverfireteam\\Panel\\Commands\\CrudCommand' => __DIR__ . '/..' . '/serverfireteam/panel/src/Serverfireteam/Panel/Commands/CrudCommand.php',
-        'Serverfireteam\\Panel\\Commands\\PanelCommand' => __DIR__ . '/..' . '/serverfireteam/panel/src/Serverfireteam/Panel/Commands/PanelCommand.php',
-        'Serverfireteam\\Panel\\CrudController' => __DIR__ . '/..' . '/serverfireteam/panel/src/controllers/CrudController.php',
-        'Serverfireteam\\Panel\\ExportImportController' => __DIR__ . '/..' . '/serverfireteam/panel/src/controllers/ExportImportController.php',
-        'Serverfireteam\\Panel\\HasRoles' => __DIR__ . '/..' . '/serverfireteam/panel/src/models/HasRoles.php',
-        'Serverfireteam\\Panel\\Link' => __DIR__ . '/..' . '/serverfireteam/panel/src/models/Link.php',
-        'Serverfireteam\\Panel\\LinkController' => __DIR__ . '/..' . '/serverfireteam/panel/src/controllers/LinkController.php',
-        'Serverfireteam\\Panel\\LinkSeeder' => __DIR__ . '/..' . '/serverfireteam/panel/src/models/LinkSeeder.php',
-        'Serverfireteam\\Panel\\MainController' => __DIR__ . '/..' . '/serverfireteam/panel/src/controllers/MainController.php',
-        'Serverfireteam\\Panel\\Permission' => __DIR__ . '/..' . '/serverfireteam/panel/src/models/Permission.php',
-        'Serverfireteam\\Panel\\PermissionController' => __DIR__ . '/..' . '/serverfireteam/panel/src/controllers/PermissionController.php',
-        'Serverfireteam\\Panel\\ProfileController' => __DIR__ . '/..' . '/serverfireteam/panel/src/controllers/ProfileController.php',
-        'Serverfireteam\\Panel\\RemindersController' => __DIR__ . '/..' . '/serverfireteam/panel/src/controllers/RemindersController.php',
-        'Serverfireteam\\Panel\\Role' => __DIR__ . '/..' . '/serverfireteam/panel/src/models/Role.php',
-        'Serverfireteam\\Panel\\RoleController' => __DIR__ . '/..' . '/serverfireteam/panel/src/controllers/RoleController.php',
-        'Serverfireteam\\Panel\\UsersController' => __DIR__ . '/..' . '/serverfireteam/panel/src/controllers/UsersController.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
-        'elFinder' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinder.class.php',
-        'elFinderConnector' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderConnector.class.php',
-        'elFinderLibGdBmp' => __DIR__ . '/..' . '/studio-42/elfinder/php/libs/GdBmp.php',
-        'elFinderPluginAutoResize' => __DIR__ . '/..' . '/studio-42/elfinder/php/plugins/AutoResize/plugin.php',
-        'elFinderPluginAutoRotate' => __DIR__ . '/..' . '/studio-42/elfinder/php/plugins/AutoRotate/plugin.php',
-        'elFinderPluginNormalizer' => __DIR__ . '/..' . '/studio-42/elfinder/php/plugins/Normalizer/plugin.php',
-        'elFinderPluginSanitizer' => __DIR__ . '/..' . '/studio-42/elfinder/php/plugins/Sanitizer/plugin.php',
-        'elFinderPluginWatermark' => __DIR__ . '/..' . '/studio-42/elfinder/php/plugins/Watermark/plugin.php',
-        'elFinderSession' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderSession.php',
-        'elFinderSessionInterface' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderSessionInterface.php',
-        'elFinderVolumeDriver' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeDriver.class.php',
-        'elFinderVolumeDropbox' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeDropbox.class.php',
-        'elFinderVolumeFTP' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeFTP.class.php',
-        'elFinderVolumeFlysystem' => __DIR__ . '/..' . '/barryvdh/elfinder-flysystem-driver/elFinderVolumeFlysystem.php',
-        'elFinderVolumeFlysystemGoogleDriveCache' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderFlysystemGoogleDriveNetmount.php',
-        'elFinderVolumeFlysystemGoogleDriveNetmount' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderFlysystemGoogleDriveNetmount.php',
-        'elFinderVolumeGroup' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeGroup.class.php',
-        'elFinderVolumeLocalFileSystem' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeLocalFileSystem.class.php',
-        'elFinderVolumeMySQL' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeMySQL.class.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

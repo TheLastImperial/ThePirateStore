@@ -350,7 +350,7 @@ class Connection implements ConnectionInterface
         });
     }
 
-    /*
+    /**
      * Run a select statement against the database and returns a generator.
      *
      * @param  string  $query
@@ -575,6 +575,12 @@ class Connection implements ConnectionInterface
             // up in the database. Then we'll re-throw the exception so it can
             // be handled how the developer sees fit for their applications.
             catch (Exception $e) {
+                if ($this->causedByDeadlock($e) && $this->transactions > 1) {
+                    --$this->transactions;
+
+                    throw $e;
+                }
+
                 $this->rollBack();
 
                 if ($this->causedByDeadlock($e) && $a < $attempts) {
@@ -823,7 +829,7 @@ class Connection implements ConnectionInterface
      */
     protected function reconnectIfMissingConnection()
     {
-        if (is_null($this->getPdo()) || is_null($this->getReadPdo())) {
+        if (is_null($this->pdo)) {
             $this->reconnect();
         }
     }

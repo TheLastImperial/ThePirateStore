@@ -11,19 +11,6 @@
 |
 */
 
-Route::get('/','CategoriaController@index');
-Route::get('/categorias/{categoria}','ArticuloController@articulosCategoria');
-Route::get('/articulo/{id}','ArticuloController@articulo');
-/* Carrito */
-Route::post('/articulocarrito/agregar','ArticuloCarritoController@agregar')->middleware('auth');
-Route::get('/carrito','CarritoController@mostrar')->middleware('auth');
-Route::post('/venta','VentaController@comprar')->middleware('auth');
-/* Usuarios */
-Route::post('/login','UsuarioController@login');
-Route::get('/registro', function () {
-	return view('registro');
+Route::get('/', function () {
+	return view('consola');
 });
-Route::post('/registro/registrar','UsuarioController@register');
-Route::get('/salir','UsuarioController@logout');
-
-Route::post('/comentario','ComentarioController@comentar')->middleware('auth');
