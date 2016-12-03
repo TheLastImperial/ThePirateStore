@@ -1,16 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mail\pedido;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use \Serverfireteam\Panel\CrudController;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class VentaController extends CrudController{
 
     public function comprar(Request $request){
+
+      $correo = \App\Usuario::find(Auth::id())->correo;
 
       $carrito = \App\Carrito::find($request->input('carrito_id'));
       foreach($carrito->articuloCarrito as $ac){
@@ -27,14 +30,16 @@ class VentaController extends CrudController{
       $venta = new \App\Venta();
       $venta->carrito_id  = $request->input('carrito_id');
       $venta->total       = $request->input('total');
-      
+
       if (!($venta->save()))
         return redirect() -> intended('/') -> withError('Falló la venta.');
 
+        // Enviar correo
+      Mail::to($correo)->send(new pedido($carrito, $venta->id));
       return redirect() -> intended('/') -> withSuccess('Venta completada con éxito. Tu producto llegará pronto.');
 
       // DEBE REDIRECCIONAR HACIA UN GACIAS POR COMPRAR
-      
+
     }
     public function all($entity){
         parent::all($entity);
