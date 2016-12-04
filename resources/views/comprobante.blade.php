@@ -12,7 +12,7 @@
 	</script>
 	<div id="info" class="row">
 		<div class="col-12">
-			<img src='{{asset("img/logo.png")}}'>
+			<img class="logo" src='{{asset("img/logo.png")}}'>
 			<table>
 				<tr><td>The Pirate Store</td></tr>
 				<tr><td>Av. Juan de Dios Bátiz 310 Pte., ITC Edificio CC</td></tr>
@@ -38,10 +38,10 @@
 					@for($i = 0; $i < count($item['articulos']) ; $i++)
 					<tr>
 						<td class="tg-yw4l">{{$item['articulos'][$i]->nombre}}</td>
-						<td class="tg-b7b8">${{$item['articulos'][$i]->precio}}</td>
+						<td class="tg-b7b8">${{formato($item['articulos'][$i]->precio)}}</td>
 						<td class="tg-yw4l">{{$item['cantidades'][$i]}}</td>
 						<?php $precio = $item['articulos'][$i]->precio*$item['cantidades'][$i] ?>
-						<td class="tg-b7b8">${{$item['articulos'][$i]->precio}}</td>
+						<td class="tg-b7b8">${{formato($item['articulos'][$i]->precio)}}</td>
 					</tr>
 					<?php $total = $total + $precio ?>
 					@endfor
@@ -55,7 +55,7 @@
 						<td></td>
 						<td></td>
 						<td class="tg-yw4l">Total: </td>
-						<td class="tg-b7b8">${{$total}}.00</td>
+						<td class="tg-b7b8">${{formato($total)}}</td>
 					</tr>
 				</tbody>
 			</table>

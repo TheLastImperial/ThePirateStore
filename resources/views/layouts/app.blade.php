@@ -51,6 +51,7 @@
 						<li><a class="animate" href="#" data-toggle="modal" data-target="#login">LOGIN</a></li>
 						@else
 						<li><a class="animate" href="<?= url('salir') ?>">CERRAR SESIÓN</a></li>
+						<li><a class="animate" href="<?= url('miscompras') ?>">MIS COMPRAS</a></li>
 						@endif
 					</ul>
 				</div>

@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 use App\Usuario;
+use App\Categoria;
+use DB;
 
 class UsuarioController extends CrudController{
 
@@ -53,8 +55,37 @@ class UsuarioController extends CrudController{
     	return redirect() -> intended('/');
     }
     public function logout() {
-      Auth::logout();
-      return redirect() -> intended('/');
+        Auth::logout();
+        return redirect() -> intended('/');
+    }
+    public function listaCompras() {
+        $usuario = Usuario::find(Auth::id());
+        $categorias = Categoria::orderBy('nombre','asc')->get();
+        $carritos = DB::table('carritos')
+                        ->where('usuario_id','=',$usuario->id)
+                        ->get();
+        return view('historial',compact('carritos','categorias'));
+    }
+    public function generarComprobante($id) {
+        $carrito = \App\Carrito::find($id);
+        $articulos = array();
+        $cantidades = array();
+
+        foreach($carrito->articuloCarrito as $ac){
+            $articulo = \App\Articulo::find($ac->articulo_id);
+            $articulos = array_prepend($articulos,$articulo);
+            $cantidades = array_prepend($cantidades,$ac->cantidad);
+        }
+
+        $item = array('articulos'  => $articulos,
+                    'cantidades' => $cantidades
+              );
+        $items = array('item' => $item);
+        $vista = view('comprobante')->with($items);
+        $dompdf = \App::make('dompdf.wrapper');
+        $dompdf->loadHTML($vista);
+
+        return $dompdf->stream('recibo.pdf');
     }
     public function all($entity){
         parent::all($entity);

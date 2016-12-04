@@ -24,6 +24,8 @@ Route::post('/login','UsuarioController@login');
 Route::get('/registro', function () {
 	return view('registro');
 });
+Route::get('/miscompras','UsuarioController@listaCompras')->middleware('auth');
+Route::get('/miscompras/{id}','UsuarioController@generarComprobante')->middleware('auth');
 Route::post('/registro/registrar','UsuarioController@register');
 Route::get('/salir','UsuarioController@logout');
 
