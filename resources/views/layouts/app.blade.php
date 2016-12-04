@@ -89,6 +89,19 @@
 				</div>
 			</div>
 		</div>
+		<div class="navbar navbar-fixed-bottom">
+			<div class="row">
+				<div class="col-md-9 center">
+					<p>Sitio creado por <b>Francisco Valdez</b> y <b>Rafael Imperial</b> para la materia de <b>Ingeniería Web</b></p>
+				</div>
+				<div class="col-md-2 center divider">
+					<ul class="links">
+						<li><a href='{{url("/")}}'>Página Principal</a></li>
+						<li><a href="http://www.github.com/TheLastImperial/ThePirateStore" target="_blank">GitHub</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		@yield('content')
 		<script src='<?= asset("js/jquery.min.js") ?>'></script>
 		<script src='<?= asset("js/bootstrap.min.js") ?>'></script>

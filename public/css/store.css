@@ -7,8 +7,9 @@
 body {
     padding-top: 70px !important; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
-footer {
-    margin: 50px 0;
+.navbar-fixed-bottom {
+    background-color: #111;
+    color: #FFF;
 }
 textarea {
     resize: none;
@@ -58,4 +59,19 @@ textarea {
     padding: 9px;
     color: #333;
 }
-
+.links {
+    padding-top: 1em;
+    list-style-type: none;
+    text-decoration: underline;
+}
+.links a {
+    color: #FFF;
+}
+.divider {
+    margin: 0 9px;
+    border-left: 1px solid #FFF;
+}
+.center p {
+    padding-top: 1.5em;
+    text-align: center; 
+}

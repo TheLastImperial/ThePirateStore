@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 class VentaController extends CrudController{
 
     public function comprar(Request $request){
-
       $carrito = \App\Carrito::find($request->input('carrito_id'));
       foreach($carrito->articuloCarrito as $ac){
 
@@ -31,10 +30,30 @@ class VentaController extends CrudController{
       if (!($venta->save()))
         return redirect() -> intended('/') -> withError('Falló la venta.');
 
-      return redirect() -> intended('/') -> withSuccess('Venta completada con éxito. Tu producto llegará pronto.');
-
-      // DEBE REDIRECCIONAR HACIA UN GACIAS POR COMPRAR
+      return(self::generarComprobante($venta));
       
+      //return redirect() -> intended('/') -> withSuccess('Venta completada con éxito. Tu producto llegará pronto.');
+    }
+    public function generarComprobante($venta) {
+      $carrito = \App\Carrito::find($venta->carrito_id);
+      $articulos = array();
+      $cantidades = array();
+      foreach($carrito->articuloCarrito as $ac){
+        $articulo = \App\Articulo::find($ac->articulo_id);
+        $articulos = array_prepend($articulos,$articulo);
+        $cantidades = array_prepend($cantidades,$ac->cantidad);
+      }
+      $item = array('articulos'  => $articulos,
+                    'cantidades' => $cantidades
+              );
+      $items = array('item' => $item);
+      //dd($item['articulos'][0]->precio);
+      $vista = view('comprobante')->with($items);
+      //$vista = view('comprobante', compact('articulos'));
+      $dompdf = \App::make('dompdf.wrapper');
+      $dompdf->loadHTML($vista);
+
+      return $dompdf->stream('recibo.pdf');
     }
     public function all($entity){
         parent::all($entity);
