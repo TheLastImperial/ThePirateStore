@@ -20,9 +20,12 @@ Route::post('/articulocarrito/agregar','ArticuloCarritoController@agregar')->mid
 Route::get('/carrito','CarritoController@mostrar')->middleware('auth');
 Route::post('/venta','VentaController@comprar')->middleware('auth');
 /* Usuarios */
-Route::post('/login','UsuarioController@login');
+Route::post('/ingresar','UsuarioController@login');
 Route::get('/registro', function () {
 	return view('registro');
+});
+Route::get('/login', function () {
+	return view('login');
 });
 Route::get('/miscompras','UsuarioController@listaCompras')->middleware('auth');
 Route::get('/miscompras/{id}','UsuarioController@generarComprobante')->middleware('auth');

@@ -42,6 +42,9 @@ class UsuarioController extends CrudController{
 
     	return redirect() -> intended('/');
     }
+    public function ingresar() {
+        
+    }
     public function login(Request $request) {
     	$correo		= $request->input('email');
     	$contrasena = $request->input('password');

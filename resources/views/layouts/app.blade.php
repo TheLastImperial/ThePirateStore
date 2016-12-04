@@ -4,9 +4,9 @@
 		<meta charset="UTF-8">
 		<title>The Pirate Store</title>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href='<?= asset("css/bootstrap.min.css") ?>'>
-		<link rel="stylesheet" href='<?= asset("css/navbar.css") ?>'>
-		<link rel="stylesheet" href='<?= asset("css/login.css") ?>'>
+		<link rel="stylesheet" href='{{ asset("css/bootstrap.min.css") }}'>
+		<link rel="stylesheet" href='{{ asset("css/navbar.css") }}'>
+		<link rel="stylesheet" href='{{ asset("css/login.css") }}'>
 		@yield('styles')
 	</head>
 	<body>
@@ -21,7 +21,7 @@
 						<span class="[ icon-bar ]"></span>
 					</button>
 					<div class="[ animbrand ]">
-						<a class="[ navbar-brand ][ animate ]" href='{{url("/")}}'><img src='<?= asset("img/logo.png") ?>' alt="The Pirate Store" class="responsive"></a>
+						<a class="[ navbar-brand ][ animate ]" href='{{url("/")}}'><img src='{{ asset("img/logo.png") }}' alt="The Pirate Store" class="responsive"></a>
 					</div>
 				</div>
 
@@ -47,11 +47,11 @@
 							</ul>
 						</li>
 						@if(!Auth::check())
-						<li><a class="animate" href="<?= url('registro') ?>">REGISTRO</a></li>
+						<li><a class="animate" href="{{ url('registro') }}">REGISTRO</a></li>
 						<li><a class="animate" href="#" data-toggle="modal" data-target="#login">LOGIN</a></li>
 						@else
-						<li><a class="animate" href="<?= url('salir') ?>">CERRAR SESIÓN</a></li>
-						<li><a class="animate" href="<?= url('miscompras') ?>">MIS COMPRAS</a></li>
+						<li><a class="animate" href="{{ url('salir') }}">CERRAR SESIÓN</a></li>
+						<li><a class="animate" href="{{ url('miscompras') }}">MIS COMPRAS</a></li>
 						@endif
 					</ul>
 				</div>
@@ -76,13 +76,13 @@
 					<div class="col-md-4"></div>
 					<div class="col-md-4">
 						<section class="login-form">
-							<form method="post" action="<?= url('login') ?>" role="login">
+							<form method="post" action="{{ url('ingresar') }}" role="login">
 								<input type="hidden" name="_token" value="{{csrf_token() }}">
-								<img src='<?= asset("img/logo.png") ?>' alt="The Pirate Store" class="img-responsive">
+								<img src='{{ asset("img/logo.png") }}' alt="The Pirate Store" class="img-responsive">
 								<input type="email" name="email" placeholder="tucorreo@ejemplo.com" required class="form-control input-lg" />
 								<input type="password" class="form-control input-lg" id="password" placeholder="Contraseña" required="" />
 								<button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Iniciar sesión</button>
-								<div><a href="<?= url('registro') ?>">Crear cuenta</a> o <a href="#">recuperar contraseña</a></div>			
+								<div><a href="{{ url('registro') }}">Crear cuenta</a> o <a href="#">recuperar contraseña</a></div>			
 							</form>
 						</section>	
 					</div>
@@ -104,11 +104,11 @@
 			</div>
 		</div>
 		@yield('content')
-		<script src='<?= asset("js/jquery.min.js") ?>'></script>
-		<script src='<?= asset("js/bootstrap.min.js") ?>'></script>
-		<!--<script src='<?= asset("js/angular.min.js") ?>'></script>-->
-		<script src='<?= asset("js/navbar.js") ?>'></script>
-		<!--<script src='<?= asset("js/app.js") ?>'></script>-->
+		<script src='{{ asset("js/jquery.min.js") }}'></script>
+		<script src='{{ asset("js/bootstrap.min.js") }}'></script>
+		<!--<script src='{{ asset("js/angular.min.js") }}'></script>-->
+		<script src='{{ asset("js/navbar.js") }}'></script>
+		<!--<script src='{{ asset("js/app.js") }}'></script>-->
 		@yield('scripts')
 	</body>
 </html>
